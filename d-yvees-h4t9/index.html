@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>yvees 77 CUTZ · Barbería en Vélez-Málaga (propuesta)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+  :root{--hormigon:#E3E5E8;--blanco:#F7F8F9;--tinta:#131A22;--cobalto:#2347D6;--cobalto-claro:#DCE3FB;--gris:#5C6672;--raya:#C9CED5}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--blanco);color:var(--tinta);font-family:"Archivo",system-ui,sans-serif;font-size:17px;line-height:1.55}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--cobalto);outline-offset:3px}
+  .caja{max-width:1120px;margin:0 auto;padding:0 20px}
+  .borrador{background:var(--cobalto);color:#fff;text-align:center;font-size:14px;font-weight:600;padding:8px 16px}
+  .ancho{font-stretch:125%}
+  .estrecho{font-stretch:62%}
+
+  .heroe{background:var(--hormigon);padding:28px 0 0;overflow:hidden}
+  .barra{display:flex;justify-content:space-between;align-items:center;gap:16px;font-weight:700}
+  .barra a{text-decoration:none}
+  .barra .tel{font-weight:600}
+  .heroe-grid{display:grid;grid-template-columns:1fr 360px;gap:40px;align-items:end;padding:48px 0 56px}
+  .marca{margin:0;line-height:.8;font-weight:900;text-transform:none}
+  .marca .n{display:block;font-size:clamp(150px,26vw,330px);font-stretch:62%;letter-spacing:-.02em;color:var(--cobalto)}
+  .marca .r{display:block;font-size:clamp(28px,4.4vw,52px);font-stretch:125%;letter-spacing:.01em;margin-top:14px}
+  .ficha{background:var(--blanco);padding:24px;border:2px solid var(--tinta)}
+  .ficha p{margin:0 0 16px}
+  .ficha .nota{display:flex;align-items:baseline;gap:10px;border-top:1px solid var(--raya);padding-top:14px;margin-top:4px;color:var(--gris);font-size:15px}
+  .ficha .nota b{font-size:34px;font-stretch:62%;color:var(--tinta)}
+  .boton{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 22px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid var(--tinta);background:var(--tinta);color:#fff;cursor:pointer;font-family:inherit}
+  .boton:hover{background:var(--cobalto);border-color:var(--cobalto)}
+  .boton svg{width:20px;height:20px}
+  .franja{background:var(--tinta);color:#fff;font-weight:700;font-stretch:125%;font-size:15px;padding:14px 0}
+  .franja .caja{display:flex;gap:28px;flex-wrap:wrap}
+
+  section{padding:80px 0}
+  h2{font-size:clamp(40px,6vw,72px);font-weight:900;font-stretch:62%;line-height:.95;margin:0 0 16px;letter-spacing:-.01em}
+  .intro{max-width:54ch;color:var(--gris);margin:0 0 36px}
+
+  .rizos{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:start}
+  .pasos{list-style:none;margin:0;padding:0;counter-reset:p}
+  .pasos li{counter-increment:p;display:grid;grid-template-columns:56px 1fr;gap:16px;padding:20px 0;border-top:2px solid var(--tinta)}
+  .pasos li::before{content:counter(p);font-size:44px;font-weight:900;font-stretch:62%;line-height:1;color:var(--cobalto)}
+  .pasos b{display:block;font-size:19px}
+  .pasos span{color:var(--gris)}
+
+  .tarifa{background:var(--hormigon)}
+  .lista{list-style:none;margin:0;padding:0;columns:2;column-gap:56px}
+  .lista li{break-inside:avoid;display:flex;justify-content:space-between;gap:12px;padding:16px 0;border-bottom:1px solid var(--raya);font-weight:600}
+  .lista li span:last-child{font-stretch:62%;font-size:24px;font-weight:800}
+  .aviso{font-size:14px;color:var(--gris);margin-top:18px}
+
+  .cita{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .elige{border:2px solid var(--tinta);padding:24px}
+  fieldset{border:0;margin:0 0 20px;padding:0}
+  legend{font-weight:700;margin-bottom:10px}
+  .ops{display:flex;flex-wrap:wrap;gap:8px}
+  .ops input{position:absolute;opacity:0;pointer-events:none}
+  .ops label{min-height:44px;min-width:56px;display:inline-flex;align-items:center;justify-content:center;padding:0 14px;border:1.5px solid var(--raya);cursor:pointer;font-weight:600;font-size:15px}
+  .ops input:checked+label{background:var(--cobalto);border-color:var(--cobalto);color:#fff}
+  .ops input:focus-visible+label{outline:3px solid var(--cobalto);outline-offset:3px}
+  .msg{background:var(--cobalto-claro);padding:14px 16px;margin:0 0 18px;font-size:15px}
+  .datos{list-style:none;margin:0;padding:0}
+  .datos li{padding:16px 0;border-bottom:1px solid var(--raya)}
+  .datos small{display:block;color:var(--gris);font-size:14px}
+  .datos b{font-size:20px}
+
+  .opiniones{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--tinta)}
+  .op{padding:24px 24px 0 0}
+  .op+.op{padding-left:24px;border-left:1px solid var(--raya)}
+  .op h3{font-size:26px;font-weight:900;font-stretch:62%;margin:0 0 8px}
+  .op p{margin:0;color:var(--gris)}
+
+  footer{background:var(--tinta);color:#AEB6C0;font-size:14px;padding:26px 0}
+  footer .caja{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media (max-width:880px){
+    .heroe-grid,.rizos,.cita{grid-template-columns:1fr;gap:32px}
+    .heroe-grid{padding:28px 0 40px}
+    .lista{columns:1}
+    .opiniones{grid-template-columns:1fr}
+    .op,.op+.op{padding:20px 0;border-left:0}
+    .op+.op{border-top:1px solid var(--raya)}
+    section{padding:60px 0}
+    .barra .tel{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="borrador" role="note">Propuesta de diseño para yvees 77 CUTZ. Borrador.</div>
+
+<header class="heroe">
+  <div class="caja">
+    <div class="barra"><a href="#">yvees 77 CUTZ</a><a class="tel" href="tel:+34605240825">605 24 08 25</a></div>
+    <div class="heroe-grid">
+      <h1 class="marca"><span class="n">77</span><span class="r">yvees CUTZ</span></h1>
+      <div class="ficha">
+        <p>Barbería en Vélez-Málaga. Cortes cuidados al detalle y permanentes para chico, algo que casi nadie hace en la zona.</p>
+        <a class="boton" href="#cita" style="width:100%">Pedir cita</a>
+        <div class="nota"><b>5,0</b> de media en Google, con 87 reseñas</div>
+      </div>
+    </div>
+  </div>
+  <div class="franja"><div class="caja"><span>Lunes a viernes</span><span>De 17:00 a 20:00</span><span>C. Reñidero, 5</span></div></div>
+</header>
+
+<main>
+  <section>
+    <div class="caja rizos">
+      <div>
+        <h2>Rizos para chico</h2>
+        <p class="intro">La permanente de hombre es la especialidad de la casa. Si llevas tiempo queriendo probarla, así es el proceso.</p>
+      </div>
+      <ol class="pasos">
+        <li><div><b>Hablamos antes</b><span>Miramos tu tipo de pelo y el rizo que buscas: suave, marcado o solo arriba.</span></div></li>
+        <li><div><b>Corte de base</b><span>Se prepara el corte para que el rizo caiga bien desde el primer día.</span></div></li>
+        <li><div><b>Rulos y fijado</b><span>Con calma y sin prisas. Cuenta con algo más de tiempo que un corte normal.</span></div></li>
+        <li><div><b>Cómo cuidarlo</b><span>Te vas con consejos para que el rizo te dure y se vea bien en casa.</span></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="tarifa">
+    <div class="caja">
+      <h2>Servicios</h2>
+      <ul class="lista">
+        <li><span>Corte de caballero</span><span>00 €</span></li>
+        <li><span>Corte y barba</span><span>00 €</span></li>
+        <li><span>Arreglo de barba</span><span>00 €</span></li>
+        <li><span>Permanente completa</span><span>00 €</span></li>
+        <li><span>Permanente solo arriba</span><span>00 €</span></li>
+        <li><span>Corte infantil</span><span>00 €</span></li>
+      </ul>
+      <p class="aviso">Servicios y precios de ejemplo. En la web final irían los de verdad.</p>
+    </div>
+  </section>
+
+  <section id="cita">
+    <div class="caja cita">
+      <div>
+        <h2>Pide tu hueco</h2>
+        <p class="intro">Solo abre por la tarde, así que las horas vuelan. Elige día y hora, y te abrimos WhatsApp con el mensaje escrito.</p>
+        <ul class="datos">
+          <li><small>Dirección</small><b>C. Reñidero, 5, 29700 Vélez-Málaga</b></li>
+          <li><small>Teléfono y WhatsApp</small><b><a href="tel:+34605240825">605 24 08 25</a></b></li>
+          <li><small>Horario</small><b>Lunes a viernes, de 17:00 a 20:00</b></li>
+        </ul>
+        <p style="margin-top:20px"><a href="https://www.google.com/maps/search/?api=1&query=yvees%2077%20CUTZ%20C.%20Re%C3%B1idero%205%20V%C3%A9lez-M%C3%A1laga" target="_blank" rel="noopener">Ver en Google Maps</a></p>
+      </div>
+      <form class="elige" id="form">
+        <fieldset><legend>Servicio</legend><div class="ops">
+          <input type="radio" name="s" id="s1" value="un corte" checked><label for="s1">Corte</label>
+          <input type="radio" name="s" id="s2" value="corte y barba"><label for="s2">Corte y barba</label>
+          <input type="radio" name="s" id="s3" value="una permanente"><label for="s3">Permanente</label>
+        </div></fieldset>
+        <fieldset><legend>Día</legend><div class="ops">
+          <input type="radio" name="d" id="d1" value="el lunes" checked><label for="d1">Lun</label>
+          <input type="radio" name="d" id="d2" value="el martes"><label for="d2">Mar</label>
+          <input type="radio" name="d" id="d3" value="el miércoles"><label for="d3">Mié</label>
+          <input type="radio" name="d" id="d4" value="el jueves"><label for="d4">Jue</label>
+          <input type="radio" name="d" id="d5" value="el viernes"><label for="d5">Vie</label>
+        </div></fieldset>
+        <fieldset><legend>Hora aproximada</legend><div class="ops">
+          <input type="radio" name="h" id="h1" value="a las 17:00"><label for="h1">17:00</label>
+          <input type="radio" name="h" id="h2" value="a las 18:00" checked><label for="h2">18:00</label>
+          <input type="radio" name="h" id="h3" value="a las 19:00"><label for="h3">19:00</label>
+        </div></fieldset>
+        <p class="msg" aria-live="polite" id="msg"></p>
+        <a class="boton" id="wa" href="#" target="_blank" rel="noopener" style="width:100%">Enviar por WhatsApp</a>
+      </form>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="caja">
+      <h2>Lo que dicen</h2>
+      <p class="intro">Resumen de lo que más se repite en sus reseñas de Google. En la web final irían opiniones reales, con permiso de quien las escribió.</p>
+      <div class="opiniones">
+        <div class="op"><h3>Al detalle</h3><p>Se toma su tiempo y cuida cada detalle del corte. Es lo que más destacan.</p></div>
+        <div class="op"><h3>Permanentes</h3><p>Varios clientes van expresamente por las permanentes de chico, y repiten.</p></div>
+        <div class="op"><h3>Buen precio</h3><p>Trabajo de calidad a un precio justo, en un local cuidado y acogedor.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="caja"><span>yvees 77 CUTZ, barbería en Vélez-Málaga</span><span>Propuesta de diseño, no publicada.</span></div></footer>
+
+<script>
+(function(){
+  var f=document.getElementById('form'),m=document.getElementById('msg'),w=document.getElementById('wa');
+  function v(n){var e=f.querySelector('input[name="'+n+'"]:checked');return e?e.value:'';}
+  function act(){var t='Hola, quería pedir cita para '+v('s')+' '+v('d')+' '+v('h')+' más o menos. ¿Tienes hueco?';m.textContent=t;w.href='https://wa.me/34605240825?text='+encodeURIComponent(t);}
+  f.addEventListener('change',act);act();
+})();
+</script>
+</body>
+</html>
