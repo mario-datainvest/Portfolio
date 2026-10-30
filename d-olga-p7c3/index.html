@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Peluquería Olga · Vélez-Málaga (propuesta)</title>
+<meta name="description" content="Propuesta de diseño de web para Peluquería Olga en Vélez-Málaga. Borrador no publicado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --lila:#F2EEF6;        /* fondo, lila muy claro */
+    --lila-2:#E6DEEE;
+    --ciruela:#2F1B33;     /* tinta */
+    --malva:#8A4579;       /* acento principal */
+    --rosa:#F4C9D6;        /* acento suave */
+    --gris:#6B5E70;
+    --abierto:#23704F;
+    --cerrado:#9A3B3B;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--lila);color:var(--ciruela);font-family:"Figtree",system-ui,sans-serif;font-size:17px;line-height:1.6}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--malva);outline-offset:3px;border-radius:6px}
+  .caja{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  .borrador{background:var(--ciruela);color:#fff;text-align:center;font-size:14px;font-weight:600;padding:8px 16px}
+
+  header.cabecera{padding:22px 0}
+  .cabecera .caja{display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .marca{font-family:"Young Serif",serif;font-size:22px;text-decoration:none}
+  .cabecera nav{display:flex;gap:22px;font-size:15px}
+  .cabecera nav a{text-decoration:none;color:var(--gris)}
+  .cabecera nav a:hover{color:var(--ciruela);text-decoration:underline;text-underline-offset:4px}
+
+  /* Héroe */
+  .heroe{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding-top:36px;padding-bottom:80px}
+  .heroe h1{font-family:"Young Serif",serif;font-weight:400;font-size:clamp(56px,9vw,112px);line-height:.95;margin:0 0 22px;letter-spacing:-.01em}
+  .heroe h1 small{display:block;font-family:"Figtree",sans-serif;font-weight:600;font-size:18px;letter-spacing:0;color:var(--malva);margin-bottom:14px}
+  .heroe p.lead{font-size:20px;max-width:34ch;margin:0 0 24px;color:#4A3A4F}
+  .nota{display:flex;align-items:baseline;gap:10px;margin:0 0 28px;color:var(--gris);font-size:15px}
+  .nota strong{font-family:"Young Serif",serif;font-weight:400;font-size:36px;color:var(--ciruela)}
+  .botones{display:flex;flex-wrap:wrap;gap:12px}
+  .boton{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:14px;font-weight:600;font-size:16px;text-decoration:none;border:2px solid transparent}
+  .boton svg{width:20px;height:20px;flex:none}
+  .boton-principal{background:var(--malva);color:#fff}
+  .boton-principal:hover{background:#73385F}
+  .boton-borde{border-color:var(--ciruela)}
+  .boton-borde:hover{background:var(--ciruela);color:#fff}
+
+  /* Tarjeta de horario en vivo: lo memorable */
+  .horario{background:#fff;border-radius:28px;padding:28px;box-shadow:0 1px 0 var(--lila-2),0 18px 40px -24px rgba(47,27,51,.35)}
+  .estado{display:flex;align-items:center;gap:12px;padding:16px 18px;border-radius:18px;background:var(--lila);margin-bottom:20px}
+  .punto{width:14px;height:14px;border-radius:50%;background:var(--gris);flex:none}
+  .estado.abierto .punto{background:var(--abierto);box-shadow:0 0 0 6px rgba(35,112,79,.15)}
+  .estado.cerrado .punto{background:var(--cerrado)}
+  .estado b{display:block;font-size:19px}
+  .estado span{color:var(--gris);font-size:15px}
+  .horario h2{font-family:"Young Serif",serif;font-weight:400;font-size:24px;margin:0 0 6px}
+  .dias{list-style:none;margin:0;padding:0}
+  .dias li{display:flex;justify-content:space-between;gap:12px;padding:10px 12px;border-radius:10px;font-size:16px}
+  .dias li + li{border-top:1px solid var(--lila-2)}
+  .dias li.hoy{background:var(--rosa);border-color:transparent;font-weight:600}
+  .dias li.hoy + li{border-color:transparent}
+  .dias .h{text-align:right;color:#4A3A4F}
+  .dias li.hoy .h{color:var(--ciruela)}
+  .dias .cerr{color:var(--gris)}
+
+  section{padding:80px 0}
+  h2.titulo{font-family:"Young Serif",serif;font-weight:400;font-size:clamp(36px,5vw,54px);line-height:1.05;margin:0 0 16px}
+  .intro{max-width:56ch;color:var(--gris);margin:0 0 40px}
+
+  /* Servicios */
+  .servicios{background:#fff}
+  .grupos{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  .grupo h3{font-size:15px;font-weight:700;color:var(--malva);margin:0 0 6px}
+  .grupo ul{list-style:none;margin:0;padding:0}
+  .grupo li{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px solid var(--lila-2)}
+  .grupo li span:last-child{font-weight:600;white-space:nowrap}
+  .aviso{font-size:14px;color:var(--gris);margin-top:24px}
+
+  /* Opiniones */
+  .opiniones{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .opinion{background:#fff;border-radius:22px;padding:26px}
+  .opinion h3{font-family:"Young Serif",serif;font-weight:400;font-size:24px;line-height:1.15;margin:0 0 10px}
+  .opinion p{margin:0;color:#4A3A4F}
+
+  /* Antes de venir */
+  .antes{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .consejos{list-style:none;margin:0;padding:0}
+  .consejos li{padding:18px 0;border-bottom:1px solid var(--lila-2)}
+  .consejos b{display:block;font-size:18px}
+  .consejos span{color:var(--gris)}
+  .direccion{background:var(--ciruela);color:#fff;border-radius:28px;padding:32px}
+  .direccion p{font-family:"Young Serif",serif;font-size:30px;line-height:1.15;margin:0 0 8px}
+  .direccion small{display:block;color:#D9CBE0;font-size:16px;margin-bottom:24px}
+  .direccion .boton-principal{background:var(--rosa);color:var(--ciruela)}
+  .direccion .boton-principal:hover{background:#fff}
+  .direccion a.tel{display:inline-block;margin-top:18px;color:#fff;font-weight:600;text-underline-offset:4px}
+
+  footer{border-top:1px solid var(--lila-2);padding:28px 0;font-size:14px;color:var(--gris)}
+  footer .caja{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  @media (max-width:880px){
+    .cabecera nav{display:none}
+    .heroe{grid-template-columns:1fr;gap:36px;padding-top:16px;padding-bottom:60px}
+    .dias li{font-size:15px;padding:10px 8px}
+    .grupos,.opiniones{grid-template-columns:1fr;gap:24px}
+    .antes{grid-template-columns:1fr;gap:32px}
+    section{padding:60px 0}
+    .horario,.direccion{padding:22px;border-radius:22px}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .estado.abierto .punto{animation:latido 2.4s ease-in-out infinite}
+    @keyframes latido{50%{box-shadow:0 0 0 10px rgba(35,112,79,0)}}
+  }
+</style>
+</head>
+<body>
+
+<div class="borrador" role="note">Propuesta de diseño para Peluquería Olga. Borrador.</div>
+
+<header class="cabecera">
+  <div class="caja">
+    <a class="marca" href="#">Peluquería Olga</a>
+    <nav aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#opiniones">Opiniones</a>
+      <a href="#visita">Cómo llegar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="caja heroe">
+    <div>
+      <h1><small>Peluquería en Vélez-Málaga</small>Olga</h1>
+      <p class="lead">Corte, color y peinado con tiempo para ti. Olga atiende a cada clienta en persona, sin prisas.</p>
+      <div class="nota"><strong>4,9</strong> de media en Google, con 48 reseñas</div>
+      <div class="botones">
+        <a class="boton boton-principal" id="citaWa" href="https://wa.me/34619403377?text=Hola%20Olga%2C%20quer%C3%ADa%20pedir%20cita.%20%C2%BFQu%C3%A9%20huecos%20tienes%3F" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1-1.5-1-2.8s.7-2 1-2.3a1 1 0 0 1 .7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6a8 8 0 0 0 1.5 1.8 7.3 7.3 0 0 0 2.1 1.3c.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3s.1.6-.1 1.2Z"/></svg>
+          Pedir cita por WhatsApp
+        </a>
+        <a class="boton boton-borde" href="tel:+34619403377">Llamar al 619 40 33 77</a>
+      </div>
+    </div>
+
+    <aside class="horario" aria-labelledby="tit-horario">
+      <div class="estado" id="estado" aria-live="polite"><span class="punto"></span><div><b id="estadoTxt">Horario</b><span id="estadoSub">Consulta los días de abajo</span></div></div>
+      <h2 id="tit-horario">Horario</h2>
+      <ul class="dias" id="dias"></ul>
+    </aside>
+  </div>
+
+  <section class="servicios" id="servicios">
+    <div class="caja">
+      <h2 class="titulo">Servicios</h2>
+      <p class="intro">Olga estudia tu pelo y tu cara antes de empezar, para recomendarte lo que mejor te queda.</p>
+      <div class="grupos">
+        <div class="grupo"><h3>Corte y peinado</h3><ul>
+          <li><span>Corte de mujer</span><span>00 €</span></li>
+          <li><span>Lavado y peinado</span><span>00 €</span></li>
+          <li><span>Recogido para eventos</span><span>00 €</span></li>
+        </ul></div>
+        <div class="grupo"><h3>Color</h3><ul>
+          <li><span>Tinte de raíz</span><span>00 €</span></li>
+          <li><span>Mechas</span><span>00 €</span></li>
+          <li><span>Matiz y brillo</span><span>00 €</span></li>
+        </ul></div>
+        <div class="grupo"><h3>Para los peques</h3><ul>
+          <li><span>Corte infantil</span><span>00 €</span></li>
+          <li><span>Primer corte de bebé</span><span>00 €</span></li>
+        </ul></div>
+      </div>
+      <p class="aviso">Servicios y precios de ejemplo. En la web final irían los de verdad.</p>
+    </div>
+  </section>
+
+  <section id="opiniones">
+    <div class="caja">
+      <h2 class="titulo">Lo que dicen sus clientas</h2>
+      <p class="intro">Resumen de lo que más se repite en sus reseñas de Google. En la web final irían opiniones reales, con permiso de quien las escribió.</p>
+      <div class="opiniones">
+        <div class="opinion"><h3>Te escucha</h3><p>Muchas clientas cuentan que salen con exactamente lo que pidieron, incluso después de malas experiencias en otros sitios.</p></div>
+        <div class="opinion"><h3>Trato cercano</h3><p>Se repite el trato personal: se adapta a cada una y busca la forma de que salgas contenta.</p></div>
+        <div class="opinion"><h3>Buena mano con los niños</h3><p>Varias familias llevan a sus bebés y niños a cortarse el pelo con ella y repiten.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visita" style="padding-top:0">
+    <div class="caja antes">
+      <div>
+        <h2 class="titulo">Antes de venir</h2>
+        <ul class="consejos">
+          <li><b>Pide cita</b><span>Olga trabaja sola y dedica a cada clienta su tiempo. Con cita, no esperas.</span></li>
+          <li><b>Pago en efectivo</b><span>Por ahora el salón no tiene datáfono.</span></li>
+          <li><b>Los martes, cerrado</b><span>Y los domingos. El resto de días, mira el horario de arriba.</span></li>
+        </ul>
+      </div>
+      <div class="direccion">
+        <p>C. Juan Vázquez Rengifo, 1</p>
+        <small>29700 Vélez-Málaga</small>
+        <a class="boton boton-principal" href="https://www.google.com/maps/search/?api=1&query=Peluquer%C3%ADa%20Olga%20C.%20Juan%20V%C3%A1zquez%20Rengifo%201%20V%C3%A9lez-M%C3%A1laga" target="_blank" rel="noopener">Cómo llegar</a><br>
+        <a class="tel" href="tel:+34619403377">619 40 33 77</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="caja">
+    <span>Peluquería Olga, Vélez-Málaga</span>
+    <span>Propuesta de diseño, no publicada.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Horario según su ficha de Google. Minutos desde medianoche.
+  var nombres=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+  var horario={
+    1:[[570,810],[960,1260]],
+    2:[],
+    3:[[570,840],[960,1260]],
+    4:[[570,1260]],
+    5:[[570,840],[960,1260]],
+    6:[[540,900]],
+    0:[]
+  };
+  function hm(m){var h=Math.floor(m/60),mi=m%60;return h+':'+(mi<10?'0':'')+mi;}
+  function texto(d){return horario[d].length?horario[d].map(function(t){return hm(t[0])+' – '+hm(t[1]);}).join(' y '):'Cerrado';}
+
+  var ahora;
+  try{
+    var p=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',weekday:'short',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date());
+    var mapa={'lun':1,'mar':2,'mié':3,'jue':4,'vie':5,'sáb':6,'dom':0};
+    var o={};p.forEach(function(x){o[x.type]=x.value;});
+    var dia=mapa[o.weekday.replace('.','').toLowerCase()];
+    ahora={dia:(dia===undefined?new Date().getDay():dia),min:parseInt(o.hour,10)*60+parseInt(o.minute,10)};
+  }catch(e){var d=new Date();ahora={dia:d.getDay(),min:d.getHours()*60+d.getMinutes()};}
+
+  // Lista de lunes a domingo, con hoy marcado
+  var lista=document.getElementById('dias');
+  [1,2,3,4,5,6,0].forEach(function(d){
+    var li=document.createElement('li');
+    if(d===ahora.dia){li.className='hoy';}
+    var t=texto(d);
+    li.innerHTML='<span>'+nombres[d]+(d===ahora.dia?' (hoy)':'')+'</span><span class="h'+(t==='Cerrado'?' cerr':'')+'">'+t+'</span>';
+    lista.appendChild(li);
+  });
+
+  // Abierto ahora / cuándo abre
+  var est=document.getElementById('estado'),tx=document.getElementById('estadoTxt'),sub=document.getElementById('estadoSub');
+  var tramos=horario[ahora.dia],abierto=null;
+  tramos.forEach(function(t){if(ahora.min>=t[0]&&ahora.min<t[1])abierto=t;});
+  if(abierto){
+    est.className='estado abierto';tx.textContent='Abierto ahora';sub.textContent='Hoy cierra a las '+hm(abierto[1]);
+  }else{
+    est.className='estado cerrado';tx.textContent='Cerrado ahora';
+    var sig=null;
+    tramos.forEach(function(t){if(!sig&&t[0]>ahora.min)sig='Abre hoy a las '+hm(t[0]);});
+    for(var i=1;!sig&&i<=7;i++){
+      var d=(ahora.dia+i)%7;
+      if(horario[d].length){sig='Abre '+(i===1?'mañana':'el '+nombres[d].toLowerCase())+' a las '+hm(horario[d][0][0]);}
+    }
+    sub.textContent=sig||'';
+  }
+})();
+</script>
+</body>
+</html>
