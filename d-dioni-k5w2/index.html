@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Peluquería Dioni · Barbería en Vélez-Málaga (propuesta)</title>
+<meta name="description" content="Propuesta de diseño de web para Peluquería Dioni, barbería de caballero en Vélez-Málaga. Borrador no publicado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --botella:#173A2C;      /* verde botella, el color de fondo fuerte */
+    --botella-hondo:#0F271D;
+    --laton:#C9973A;        /* latón de los sillones de barbero */
+    --laton-claro:#E7C27A;
+    --cal:#F3F5F2;          /* blanco frío de pared encalada */
+    --tinta:#14221B;
+    --gris:#55625B;
+    --raya:#D6DDD8;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;background:var(--cal);color:var(--tinta);
+    font-family:"Instrument Sans",system-ui,sans-serif;font-size:17px;line-height:1.55;
+  }
+  a{color:inherit}
+  img{max-width:100%}
+  :focus-visible{outline:3px solid var(--laton);outline-offset:3px;border-radius:4px}
+  .envoltorio{max-width:1120px;margin:0 auto;padding:0 20px}
+
+  /* Banda de borrador */
+  .borrador{
+    background:var(--laton-claro);color:var(--tinta);text-align:center;
+    font-size:14px;font-weight:600;padding:8px 16px;
+  }
+
+  /* Cabecera / rótulo */
+  .rotulo{background:var(--botella);color:var(--cal);position:relative;overflow:hidden}
+  .rotulo::after{ /* listón de latón, como el filo de un espejo de barbería */
+    content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--laton);
+  }
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:16px}
+  .nav .marca{font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:22px;letter-spacing:.02em;text-decoration:none}
+  .nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:15px}
+  .nav ul a{text-decoration:none;opacity:.85}
+  .nav ul a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px}
+
+  .heroe{display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:end;padding:48px 0 72px}
+  .nombre{
+    font-family:"Big Shoulders Display",sans-serif;font-weight:900;
+    font-size:clamp(108px,22vw,260px);line-height:.82;margin:0;letter-spacing:-.01em;
+    color:var(--cal);
+  }
+  .nombre span{display:block;font-weight:600;font-size:.22em;letter-spacing:.04em;line-height:1.1;color:var(--laton-claro);margin-bottom:.35em}
+  .entrada p{font-size:20px;max-width:30ch;margin:0 0 24px;color:#DCE5DF}
+  .nota-google{
+    display:flex;align-items:center;gap:12px;margin:0 0 26px;font-size:15px;color:#DCE5DF
+  }
+  .nota-google strong{font-family:"Big Shoulders Display",sans-serif;font-size:40px;line-height:1;color:var(--laton-claro)}
+  .botones{display:flex;flex-wrap:wrap;gap:12px}
+  .boton{
+    display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;
+    font-weight:600;font-size:16px;text-decoration:none;border:2px solid transparent;cursor:pointer;
+    font-family:inherit;
+  }
+  .boton-principal{background:var(--laton);color:var(--tinta)}
+  .boton-principal:hover{background:var(--laton-claro)}
+  .boton-secundario{border-color:rgba(243,245,242,.5);color:var(--cal);background:transparent}
+  .boton-secundario:hover{border-color:var(--cal)}
+  .boton svg{width:20px;height:20px;flex:none}
+
+  /* Secciones */
+  section{padding:80px 0}
+  h2{
+    font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:clamp(40px,6vw,64px);
+    line-height:.95;margin:0 0 18px;letter-spacing:.005em
+  }
+  .intro{max-width:56ch;color:var(--gris);margin:0 0 40px}
+
+  /* Tarifa: como la pizarra de precios de la pared */
+  .tarifa{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .lista-precios{list-style:none;margin:0;padding:0;border-top:2px solid var(--tinta)}
+  .lista-precios li{display:flex;align-items:baseline;gap:12px;padding:18px 0;border-bottom:1px solid var(--raya)}
+  .lista-precios .servicio{font-weight:600;font-size:19px}
+  .lista-precios .detalle{display:block;font-weight:400;font-size:15px;color:var(--gris)}
+  .lista-precios .relleno{flex:1;border-bottom:2px dotted #A9B5AE;transform:translateY(-6px);min-width:20px}
+  .lista-precios .precio{font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:28px;white-space:nowrap}
+  .aviso{font-size:14px;color:var(--gris);margin-top:14px}
+
+  /* Pedir cita: el elemento útil */
+  .cita{background:var(--botella);color:var(--cal);border-radius:20px;padding:32px}
+  .cita h3{font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:36px;line-height:1;margin:0 0 8px}
+  .cita > p{margin:0 0 22px;color:#DCE5DF;font-size:16px}
+  fieldset{border:0;margin:0 0 20px;padding:0}
+  legend{font-weight:600;font-size:15px;margin-bottom:10px;color:var(--laton-claro)}
+  .opciones{display:flex;flex-wrap:wrap;gap:8px}
+  .opciones input{position:absolute;opacity:0;pointer-events:none}
+  .opciones label{
+    display:inline-flex;align-items:center;min-height:44px;padding:0 16px;border-radius:999px;
+    border:1.5px solid rgba(243,245,242,.35);cursor:pointer;font-size:15px;user-select:none
+  }
+  .opciones input:checked + label{background:var(--cal);color:var(--botella);border-color:var(--cal);font-weight:600}
+  .opciones input:focus-visible + label{outline:3px solid var(--laton);outline-offset:3px}
+  .vista-previa{
+    background:var(--botella-hondo);border-radius:12px;padding:14px 16px;font-size:15px;margin:4px 0 20px;
+    color:#DCE5DF;border-left:4px solid var(--laton)
+  }
+  .vista-previa small{display:block;color:var(--laton-claro);font-weight:600;margin-bottom:4px}
+
+  /* Clientes */
+  .clientes{background:#E6ECE8}
+  .rasgos{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--tinta)}
+  .rasgo{padding:26px 26px 26px 0}
+  .rasgo + .rasgo{padding-left:26px;border-left:1px solid #C3CEC8}
+  .rasgo h3{font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:30px;line-height:1;margin:0 0 10px}
+  .rasgo p{margin:0;color:var(--gris)}
+
+  /* Dónde */
+  .donde{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  .datos{list-style:none;margin:0;padding:0}
+  .datos li{padding:16px 0;border-bottom:1px solid var(--raya)}
+  .datos .clave{display:block;font-size:14px;color:var(--gris)}
+  .datos .valor{font-size:20px;font-weight:600}
+  .datos a{text-decoration-color:var(--laton);text-underline-offset:4px;text-decoration-thickness:2px}
+  .mapa{
+    background:var(--botella);color:var(--cal);border-radius:20px;padding:32px;min-height:260px;
+    display:flex;flex-direction:column;justify-content:space-between;gap:24px;
+    background-image:
+      linear-gradient(rgba(243,245,242,.06) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(243,245,242,.06) 1px,transparent 1px);
+    background-size:28px 28px;
+  }
+  .mapa p{margin:0;font-family:"Big Shoulders Display",sans-serif;font-weight:800;font-size:34px;line-height:1.05}
+  .mapa p span{display:block;font-family:"Instrument Sans",sans-serif;font-weight:400;font-size:16px;color:#DCE5DF;margin-top:8px}
+
+  footer{background:var(--tinta);color:#B9C5BF;font-size:14px;padding:28px 0}
+  footer .envoltorio{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  /* Botón fijo de WhatsApp en móvil */
+  .fijo{display:none}
+
+  @media (max-width:860px){
+    .nav ul{display:none}
+    .heroe{grid-template-columns:1fr;gap:28px;padding:28px 0 56px}
+    .tarifa,.donde{grid-template-columns:1fr;gap:40px}
+    .rasgos{grid-template-columns:1fr}
+    .rasgo,.rasgo + .rasgo{padding:22px 0;border-left:0}
+    .rasgo + .rasgo{border-top:1px solid #C3CEC8}
+    section{padding:60px 0}
+    .cita,.mapa{padding:24px}
+    .fijo{
+      display:flex;position:fixed;left:16px;right:16px;bottom:16px;z-index:5;justify-content:center;
+      box-shadow:0 6px 20px rgba(15,39,29,.35)
+    }
+    footer{padding-bottom:96px}
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .nombre{animation:entra .7s cubic-bezier(.2,.7,.2,1) both}
+    @keyframes entra{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+  }
+</style>
+</head>
+<body>
+
+<div class="borrador" role="note">Propuesta de diseño para Peluquería Dioni. Borrador.</div>
+
+<header class="rotulo">
+  <div class="envoltorio">
+    <nav class="nav" aria-label="Principal">
+      <a class="marca" href="#">Peluquería Dioni</a>
+      <ul>
+        <li><a href="#tarifa">Servicios</a></li>
+        <li><a href="#clientes">Clientes</a></li>
+        <li><a href="#donde">Dónde estamos</a></li>
+      </ul>
+    </nav>
+
+    <div class="heroe">
+      <h1 class="nombre"><span>Barbería de caballero en Vélez-Málaga</span>Dioni</h1>
+      <div class="entrada">
+        <p>Cortes de hombre y de niño con años de oficio, en Barrero de Capuchinos.</p>
+        <div class="nota-google">
+          <strong>4,9</strong>
+          <span>de media en Google<br>con 53 reseñas</span>
+        </div>
+        <div class="botones">
+          <a class="boton boton-principal" href="#cita">Pedir cita</a>
+          <a class="boton boton-secundario" href="tel:+34616045537">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            616 04 55 37
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="tarifa">
+    <div class="envoltorio tarifa">
+      <div>
+        <h2>Servicios</h2>
+        <p class="intro">Lo de siempre, bien hecho. Elige lo que necesitas y pide tu hueco por WhatsApp.</p>
+        <ul class="lista-precios">
+          <li><span class="servicio">Corte de caballero<span class="detalle">Lavado y peinado incluidos</span></span><span class="relleno" aria-hidden="true"></span><span class="precio">00 €</span></li>
+          <li><span class="servicio">Corte infantil<span class="detalle">Con paciencia para los más pequeños</span></span><span class="relleno" aria-hidden="true"></span><span class="precio">00 €</span></li>
+          <li><span class="servicio">Arreglo de barba<span class="detalle">Perfilado y repaso a navaja</span></span><span class="relleno" aria-hidden="true"></span><span class="precio">00 €</span></li>
+          <li><span class="servicio">Corte y barba<span class="detalle">El servicio completo</span></span><span class="relleno" aria-hidden="true"></span><span class="precio">00 €</span></li>
+        </ul>
+        <p class="aviso">Servicios y precios de ejemplo. En la web final irían los de verdad.</p>
+      </div>
+
+      <div class="cita" id="cita">
+        <h3>Pide tu cita</h3>
+        <p>Marca lo que quieres y te abrimos WhatsApp con el mensaje ya escrito.</p>
+        <form id="formCita">
+          <fieldset>
+            <legend>¿Qué te hacemos?</legend>
+            <div class="opciones">
+              <input type="radio" name="servicio" id="s1" value="un corte de caballero" checked><label for="s1">Corte</label>
+              <input type="radio" name="servicio" id="s2" value="un corte para mi hijo"><label for="s2">Corte infantil</label>
+              <input type="radio" name="servicio" id="s3" value="un arreglo de barba"><label for="s3">Barba</label>
+              <input type="radio" name="servicio" id="s4" value="corte y barba"><label for="s4">Corte y barba</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>¿Cuándo te viene bien?</legend>
+            <div class="opciones">
+              <input type="radio" name="cuando" id="c1" value="hoy" checked><label for="c1">Hoy</label>
+              <input type="radio" name="cuando" id="c2" value="mañana"><label for="c2">Mañana</label>
+              <input type="radio" name="cuando" id="c3" value="esta semana"><label for="c3">Esta semana</label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>¿Mejor por la mañana o por la tarde?</legend>
+            <div class="opciones">
+              <input type="radio" name="franja" id="f1" value="por la mañana"><label for="f1">Mañana</label>
+              <input type="radio" name="franja" id="f2" value="por la tarde"><label for="f2">Tarde</label>
+              <input type="radio" name="franja" id="f3" value="a cualquier hora" checked><label for="f3">Me da igual</label>
+            </div>
+          </fieldset>
+          <div class="vista-previa" aria-live="polite"><small>Tu mensaje</small><span id="mensaje"></span></div>
+          <a class="boton boton-principal" id="enviar" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.2 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.5-4c-.3-.5-1-1.5-1-2.8s.7-2 1-2.3a1 1 0 0 1 .7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6a8 8 0 0 0 1.5 1.8 7.3 7.3 0 0 0 2.1 1.3c.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3s.1.6-.1 1.2Z"/></svg>
+            Enviar por WhatsApp
+          </a>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="clientes" id="clientes">
+    <div class="envoltorio">
+      <h2>Lo que dicen sus clientes</h2>
+      <p class="intro">Resumen de lo que más se repite en sus reseñas de Google. En la web final irían opiniones reales, con permiso de quien las escribió.</p>
+      <div class="rasgos">
+        <div class="rasgo"><h3>Oficio</h3><p>Muchos años cortando el pelo. Los clientes destacan que sabe lo que hace y que el corte sale como lo pides.</p></div>
+        <div class="rasgo"><h3>Trato</h3><p>Atento y cercano. Se repite que te sientes a gusto desde que entras por la puerta.</p></div>
+        <div class="rasgo"><h3>Siempre hay hueco</h3><p>Varias reseñas cuentan que siempre encuentra un rato en la agenda, aunque avises con poco tiempo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="donde">
+    <div class="envoltorio donde">
+      <div>
+        <h2>Dónde estamos</h2>
+        <ul class="datos">
+          <li><span class="clave">Dirección</span><span class="valor">C. Barrero de Capuchinos, 8<br>29700 Vélez-Málaga</span></li>
+          <li><span class="clave">Teléfono y WhatsApp</span><span class="valor"><a href="tel:+34616045537">616 04 55 37</a></span></li>
+          <li><span class="clave">Horario</span><span class="valor">Horario por confirmar</span></li>
+        </ul>
+      </div>
+      <div class="mapa">
+        <p>Barrero de Capuchinos, 8<span>En pleno Vélez-Málaga</span></p>
+        <a class="boton boton-principal" href="https://www.google.com/maps/search/?api=1&query=Peluquer%C3%ADa%20Dioni%20C.%20Barrero%20de%20Capuchinos%208%20V%C3%A9lez-M%C3%A1laga" target="_blank" rel="noopener">Cómo llegar</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="envoltorio">
+    <span>Peluquería Dioni, barbería en Vélez-Málaga</span>
+    <span>Propuesta de diseño, no publicada.</span>
+  </div>
+</footer>
+
+<a class="boton boton-principal fijo" href="#cita">Pedir cita por WhatsApp</a>
+
+<script>
+  (function(){
+    var form=document.getElementById('formCita');
+    var salida=document.getElementById('mensaje');
+    var enviar=document.getElementById('enviar');
+    function valor(n){var e=form.querySelector('input[name="'+n+'"]:checked');return e?e.value:'';}
+    function actualizar(){
+      var texto='Hola Dioni, quería pedir cita para '+valor('servicio')+' '+valor('cuando')+', '+valor('franja')+'. ¿Tienes hueco?';
+      salida.textContent=texto;
+      enviar.href='https://wa.me/34616045537?text='+encodeURIComponent(texto);
+    }
+    form.addEventListener('change',actualizar);
+    actualizar();
+  })();
+</script>
+</body>
+</html>
