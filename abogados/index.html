@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Navarro &amp; Ortega Abogados · Vélez-Málaga</title>
+<meta name="description" content="Despacho de abogados en Vélez-Málaga. Familia, laboral, herencias, inmobiliario y accidentes de tráfico.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4F6F5;
+    --green: #13312A;
+    --green-2: #2C4A42;
+    --brass: #B8945A;
+    --mist: #DCE5E1;
+    --text: #22332F;
+    --muted: #56685F;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--paper); color: var(--text); font: 400 17px/1.65 "Public Sans", system-ui, sans-serif; }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--brass); outline-offset: 3px; }
+  .wrap { width: min(1100px, 100% - 32px); margin-inline: auto; }
+  .serif { font-family: "Newsreader", Georgia, serif; }
+
+  .hero { background: var(--green); color: var(--paper); }
+  .top { display: flex; justify-content: space-between; align-items: center; padding: 24px 0; }
+  .brand { font: 500 21px/1 "Newsreader", serif; text-decoration: none; }
+  .brand .amp { color: var(--brass); font-style: italic; }
+  .top nav { display: flex; gap: 26px; font-size: 15px; }
+  .top nav a { text-decoration: none; color: #C9D6D0; }
+  .top nav a:hover { color: var(--paper); }
+  @media (max-width: 680px) { .top nav { display: none; } }
+  .hero-body { padding: clamp(48px, 8vw, 110px) 0 clamp(56px, 9vw, 120px); display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; align-items: end; }
+  @media (max-width: 860px) { .hero-body { grid-template-columns: 1fr; } }
+  .hero h1 { font: 400 clamp(44px, 7.4vw, 92px)/1.02 "Newsreader", serif; letter-spacing: -0.02em; margin: 0; }
+  .hero-side p { color: #C9D6D0; margin: 0 0 24px; max-width: 38ch; }
+  .btn { display: inline-block; background: var(--brass); color: var(--green); text-decoration: none; font-weight: 600; padding: 15px 24px; border-radius: 2px; transition: background .15s; }
+  .btn:hover { background: #CBA86F; }
+
+  section { padding: clamp(64px, 9vw, 112px) 0 0; }
+  .s-head { display: grid; grid-template-columns: 1fr 1.6fr; gap: 32px; margin-bottom: 28px; }
+  @media (max-width: 860px) { .s-head { grid-template-columns: 1fr; gap: 8px; } }
+  .s-head h2 { font: 500 clamp(30px, 4.2vw, 46px)/1.08 "Newsreader", serif; margin: 0; color: var(--green); }
+  .s-head p { margin: 0; color: var(--muted); max-width: 56ch; }
+
+  /* practice areas index */
+  .areas { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--green); }
+  .areas li { display: grid; grid-template-columns: 1fr 1.6fr; gap: 32px; padding: 26px 0; border-bottom: 1px solid #BFCDC7; align-items: baseline; }
+  @media (max-width: 860px) { .areas li { grid-template-columns: 1fr; gap: 6px; } }
+  .areas h3 { font: 400 clamp(28px, 3.6vw, 40px)/1.1 "Newsreader", serif; margin: 0; color: var(--green); }
+  .areas p { margin: 0; color: var(--muted); }
+
+  /* team */
+  .team { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  @media (max-width: 760px) { .team { grid-template-columns: 1fr; } }
+  .lawyer { background: var(--mist); padding: 30px; display: grid; grid-template-columns: auto 1fr; gap: 22px; align-items: start; }
+  .mono { width: 76px; height: 96px; background: var(--green); color: var(--brass); display: grid; place-items: center; font: 500 34px/1 "Newsreader", serif; }
+  .lawyer h3 { font: 500 24px/1.2 "Newsreader", serif; margin: 0 0 2px; color: var(--green); }
+  .lawyer .role { font-size: 15px; color: var(--muted); margin: 0 0 12px; }
+  .lawyer p { margin: 0; }
+
+  /* faq */
+  details { border-bottom: 1px solid #BFCDC7; padding: 18px 0; }
+  details:first-of-type { border-top: 1px solid var(--green); }
+  summary { cursor: pointer; font: 500 21px/1.3 "Newsreader", serif; color: var(--green); list-style: none; display: flex; justify-content: space-between; gap: 16px; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; color: var(--brass); font-size: 26px; line-height: 1; transition: transform .2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin: 10px 0 0; color: var(--muted); max-width: 70ch; }
+
+  /* contact form */
+  .contact { background: var(--green); color: var(--paper); padding: clamp(32px, 6vw, 64px); display: grid; grid-template-columns: 1fr 1.3fr; gap: 40px; }
+  @media (max-width: 860px) { .contact { grid-template-columns: 1fr; } }
+  .contact h2 { font: 400 clamp(32px, 4.4vw, 50px)/1.05 "Newsreader", serif; margin: 0 0 16px; }
+  .contact .info p { color: #C9D6D0; margin: 0 0 18px; }
+  .contact .info dl { margin: 0; display: grid; gap: 10px; }
+  .contact .info dt { font-size: 14px; color: var(--brass); }
+  .contact .info dd { margin: 0; }
+  form { display: grid; gap: 16px; }
+  label { display: grid; gap: 6px; font-size: 14px; color: #C9D6D0; }
+  input, select, textarea { font: inherit; color: var(--text); background: var(--paper); border: 0; border-radius: 2px; padding: 13px 14px; }
+  textarea { min-height: 120px; resize: vertical; }
+  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 520px) { .row { grid-template-columns: 1fr; } }
+  .check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; }
+  .check input { margin-top: 4px; }
+  form button { justify-self: start; font: inherit; font-weight: 600; background: var(--brass); color: var(--green); border: 0; border-radius: 2px; padding: 15px 26px; cursor: pointer; }
+  .notice { margin: 0; padding: 14px; background: #1D443A; border-left: 3px solid var(--brass); font-size: 15px; }
+
+  footer { padding: 36px 0 44px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px 24px; font-size: 14px; color: var(--muted); }
+  footer nav { display: flex; gap: 18px; }
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <a class="brand" href="#">Navarro <span class="amp">&amp;</span> Ortega</a>
+      <nav aria-label="Principal">
+        <a href="#areas">Áreas</a>
+        <a href="#despacho">Despacho</a>
+        <a href="#consulta">Consulta</a>
+      </nav>
+    </div>
+    <div class="hero-body">
+      <h1>Abogados cerca de ti, en un lenguaje que se entiende.</h1>
+      <div class="hero-side">
+        <p>Despacho en Vélez-Málaga desde 2009. Te explicamos tus opciones, lo que cuesta cada una y cuánto puede tardar, antes de empezar.</p>
+        <a class="btn" href="#consulta">Pedir primera consulta</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="areas" aria-labelledby="t-areas">
+    <div class="s-head">
+      <h2 id="t-areas">En qué te ayudamos</h2>
+      <p>Llevamos asuntos de particulares y pequeñas empresas de la Axarquía. Si tu caso es de otra área, te orientamos hacia quien pueda llevarlo.</p>
+    </div>
+    <ul class="areas">
+      <li><h3>Familia</h3><p>Divorcios de mutuo acuerdo y contenciosos, custodia, pensiones y modificación de medidas.</p></li>
+      <li><h3>Laboral</h3><p>Despidos, reclamación de salarios y finiquitos, accidentes de trabajo e incapacidades.</p></li>
+      <li><h3>Herencias</h3><p>Testamentos, declaraciones de herederos, repartos entre hermanos y aceptación de herencias con deudas.</p></li>
+      <li><h3>Inmobiliario</h3><p>Compraventas, alquileres, impagos de renta, comunidades de propietarios y problemas con la obra.</p></li>
+      <li><h3>Tráfico</h3><p>Reclamaciones a aseguradoras por accidentes, lesiones y daños en el vehículo.</p></li>
+    </ul>
+  </section>
+
+  <section id="despacho" aria-labelledby="t-team">
+    <div class="s-head">
+      <h2 id="t-team">Quién llevará tu caso</h2>
+      <p>Somos un despacho pequeño a propósito: hablarás siempre con el abogado que lleva tu asunto, no con un intermediario.</p>
+    </div>
+    <div class="team">
+      <article class="lawyer">
+        <div class="mono" aria-hidden="true">LN</div>
+        <div><h3>Laura Navarro</h3><p class="role">Socia · Familia y herencias</p><p>Quince años acompañando a familias en divorcios y repartos de herencia, buscando acuerdo siempre que es posible.</p></div>
+      </article>
+      <article class="lawyer">
+        <div class="mono" aria-hidden="true">JO</div>
+        <div><h3>Javier Ortega</h3><p class="role">Socio · Laboral y tráfico</p><p>Especializado en despidos y reclamaciones a aseguradoras. Antes de demandar, intenta cerrar un acuerdo justo.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-faq">
+    <div class="s-head">
+      <h2 id="t-faq">Preguntas habituales</h2>
+      <p>Lo que más nos preguntan antes de la primera visita.</p>
+    </div>
+    <details><summary>¿Cuánto cuesta la primera consulta?</summary><p>La primera consulta dura 30 minutos y cuesta 40 €. Si después nos encargas el asunto, ese importe se descuenta de los honorarios.</p></details>
+    <details><summary>¿Puedo hacer la consulta por videollamada?</summary><p>Sí. Te enviamos un enlace por correo y puedes conectarte desde el móvil o el ordenador.</p></details>
+    <details><summary>¿Qué documentación tengo que traer?</summary><p>Todo lo que tengas relacionado con el asunto: contratos, cartas, nóminas, sentencias anteriores o mensajes. Al pedir cita te decimos qué es lo más importante en tu caso.</p></details>
+    <details><summary>¿Cuánto tarda un procedimiento?</summary><p>Depende del tipo de asunto y del juzgado. En la primera consulta te damos una estimación realista para tu caso.</p></details>
+  </section>
+
+  <section id="consulta" aria-labelledby="t-consulta">
+    <div class="contact">
+      <div class="info">
+        <h2 id="t-consulta">Pide tu primera consulta</h2>
+        <p>Cuéntanos brevemente tu caso y te llamamos en menos de 24 horas laborables para darte cita.</p>
+        <dl>
+          <dt>Teléfono</dt><dd><a href="tel:+34600000000">600 00 00 00</a></dd>
+          <dt>Despacho</dt><dd>Calle Ejemplo, 3, 1.º · Vélez-Málaga</dd>
+          <dt>Horario</dt><dd>Lunes a viernes, 9:00 – 14:00 y 17:00 – 19:30</dd>
+        </dl>
+      </div>
+      <form id="form" novalidate>
+        <div class="row">
+          <label>Nombre<input name="nombre" autocomplete="name" required></label>
+          <label>Teléfono<input name="telefono" type="tel" autocomplete="tel" required></label>
+        </div>
+        <label>Área
+          <select name="area">
+            <option>Familia</option><option>Laboral</option><option>Herencias</option><option>Inmobiliario</option><option>Tráfico</option><option>Otro / no lo sé</option>
+          </select>
+        </label>
+        <label>Tu caso en pocas líneas<textarea name="mensaje"></textarea></label>
+        <label class="check"><input type="checkbox" required> Acepto la política de privacidad</label>
+        <button type="submit">Enviar consulta</button>
+        <p class="notice" id="notice" hidden>Esto es una web de demostración: en una web real, tu consulta llegaría al correo del despacho.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Navarro &amp; Ortega Abogados · Proyecto de portfolio, despacho ficticio</span>
+  <nav aria-label="Legal"><a href="#">Aviso legal</a><a href="#">Privacidad</a><a href="#">Cookies</a></nav>
+</footer>
+
+<script>
+  document.getElementById("form").addEventListener("submit", e => {
+    e.preventDefault();
+    document.getElementById("notice").hidden = false;
+  });
+</script>
+</body>
+</html>

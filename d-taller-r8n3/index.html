@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Talleres Pérez Gómez · Propuesta de web</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --steel: #EEF1F3;
+    --slate: #1F3A4D;
+    --slate-2: #4E6474;
+    --orange: #FF7A1A;
+    --white: #FFFFFF;
+    --line: #CDD6DC;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--steel); color: var(--slate); font: 400 17px/1.6 "Barlow", system-ui, sans-serif; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--orange); outline-offset: 3px; }
+  .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+  .draft { background: var(--orange); color: var(--slate); font-size: 14px; font-weight: 600; text-align: center; padding: 8px 16px; }
+  [data-lang="en"] .es, [data-lang="es"] .en { display: none !important; }
+
+  .hero { background: var(--slate); color: var(--white); position: relative; overflow: hidden; }
+  .hero::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 14px; background: repeating-linear-gradient(-45deg, var(--orange) 0 18px, var(--slate) 18px 36px); }
+  .top { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; gap: 16px; }
+  .logo { font: 800 26px/1 "Barlow Condensed", sans-serif; text-decoration: none; letter-spacing: .01em; }
+  .logo span { color: var(--orange); }
+  .langs { display: inline-flex; border: 2px solid #3C5A6E; border-radius: 8px; overflow: hidden; }
+  .langs button { font: 600 15px/1 "Barlow", sans-serif; background: transparent; color: #C6D3DC; border: 0; padding: 9px 14px; cursor: pointer; }
+  .langs button[aria-pressed="true"] { background: var(--orange); color: var(--slate); }
+  .hero-body { padding: clamp(40px, 7vw, 96px) 0 clamp(56px, 8vw, 110px); display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: end; }
+  @media (max-width: 860px) { .hero-body { grid-template-columns: 1fr; } }
+  h1 { font: 800 clamp(48px, 8vw, 104px)/0.92 "Barlow Condensed", sans-serif; text-transform: uppercase; margin: 0 0 20px; }
+  .hero p { color: #C6D3DC; font-size: 19px; max-width: 46ch; margin: 0; }
+  .side { background: #27485E; border-left: 6px solid var(--orange); padding: 24px; }
+  .side .rate { font: 800 48px/1 "Barlow Condensed", sans-serif; color: var(--orange); }
+  .side p { margin: 4px 0 18px; color: #C6D3DC; font-size: 15px; }
+  .btn { display: inline-block; background: var(--orange); color: var(--slate); font-weight: 600; text-decoration: none; padding: 14px 22px; border-radius: 6px; }
+  .btn:hover { background: #FF8F3D; }
+
+  section { padding: clamp(60px, 8vw, 100px) 0 0; }
+  h2.t { font: 800 clamp(34px, 5vw, 56px)/0.95 "Barlow Condensed", sans-serif; text-transform: uppercase; margin: 0 0 12px; }
+  .lead { color: var(--slate-2); max-width: 58ch; margin: 0 0 30px; }
+
+  .camper { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--white); border-radius: 10px; overflow: hidden; }
+  @media (max-width: 860px) { .camper { grid-template-columns: 1fr; } }
+  .camper .pic { background: var(--slate); min-height: 280px; position: relative; }
+  .camper .pic svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .camper .txt { padding: clamp(24px, 4vw, 44px); }
+  .camper h3 { font: 800 34px/1 "Barlow Condensed", sans-serif; text-transform: uppercase; margin: 0 0 12px; }
+  .camper ul { margin: 0 0 20px; padding-left: 20px; color: var(--slate-2); }
+
+  .svcs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  @media (max-width: 900px) { .svcs { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .svcs { grid-template-columns: 1fr; } }
+  .svc { background: var(--white); border-top: 4px solid var(--orange); padding: 22px; border-radius: 0 0 8px 8px; }
+  .svc h3 { font: 800 24px/1.05 "Barlow Condensed", sans-serif; text-transform: uppercase; margin: 0 0 8px; }
+  .svc p { margin: 0; color: var(--slate-2); font-size: 15px; }
+
+  .info { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 760px) { .info { grid-template-columns: 1fr; } }
+  .panel { background: var(--white); padding: 26px; border-radius: 8px; }
+  .panel h3 { font: 800 26px/1 "Barlow Condensed", sans-serif; text-transform: uppercase; margin: 0 0 14px; }
+  dl.h { display: grid; grid-template-columns: auto 1fr; gap: 8px 20px; margin: 0; }
+  dl.h dt { font-weight: 600; }
+  dl.h dd { margin: 0; color: var(--slate-2); }
+  .tel { font: 800 34px/1 "Barlow Condensed", sans-serif; text-decoration: none; display: inline-block; margin: 4px 0 16px; }
+
+  footer { padding: 44px 0; font-size: 14px; color: var(--slate-2); }
+</style>
+</head>
+<body data-lang="es">
+<div class="draft"><span class="es">Propuesta de diseño para Talleres Pérez Gómez. Borrador: los textos son de ejemplo.</span><span class="en">Design proposal for Talleres Pérez Gómez. Draft: sample text.</span></div>
+<header class="hero">
+  <div class="wrap">
+    <div class="top">
+      <a class="logo" href="#">Talleres <span>Pérez Gómez</span></a>
+      <div class="langs" role="group" aria-label="Idioma / Language">
+        <button type="button" data-set="es" aria-pressed="true">ES</button>
+        <button type="button" data-set="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+    <div class="hero-body">
+      <div>
+        <h1><span class="es">Tu taller en Vélez-Málaga</span><span class="en">Your garage in Vélez-Málaga</span></h1>
+        <p class="es">Mecánica y diagnóstico para coches, furgonetas grandes y autocaravanas. Si estás de viaje y algo falla, llámanos.</p>
+        <p class="en">Repairs and diagnostics for cars, large vans and motorhomes. Travelling and something breaks down? Call us.</p>
+      </div>
+      <div class="side">
+        <div class="rate">4,6 ★</div>
+        <p class="es">102 reseñas en Google, muchas de viajeros con autocaravana.</p>
+        <p class="en">102 Google reviews, many from motorhome travellers.</p>
+        <a class="btn" href="tel:+34952502992"><span class="es">Llamar al taller</span><span class="en">Call the garage</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section aria-labelledby="t-cv">
+    <div class="camper">
+      <div class="pic" aria-hidden="true">
+        <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid meet">
+          <rect x="60" y="110" width="260" height="110" rx="14" fill="#FFFFFF"/>
+          <path d="M320 140 L360 160 L360 220 L320 220 Z" fill="#FFFFFF"/>
+          <rect x="300" y="122" width="44" height="34" rx="4" fill="#9FB4C2"/>
+          <rect x="84" y="130" width="70" height="38" rx="6" fill="#9FB4C2"/>
+          <rect x="170" y="130" width="70" height="38" rx="6" fill="#9FB4C2"/>
+          <rect x="60" y="186" width="300" height="10" fill="#FF7A1A"/>
+          <circle cx="118" cy="228" r="26" fill="#0F2533"/><circle cx="118" cy="228" r="10" fill="#9FB4C2"/>
+          <circle cx="300" cy="228" r="26" fill="#0F2533"/><circle cx="300" cy="228" r="10" fill="#9FB4C2"/>
+          <rect x="40" y="252" width="340" height="4" fill="#3C5A6E"/>
+        </svg>
+      </div>
+      <div class="txt">
+        <h3 id="t-cv"><span class="es">Autocaravanas y furgonetas grandes</span><span class="en">Motorhomes and large vans</span></h3>
+        <ul class="es"><li>Espacio y equipo para vehículos grandes.</li><li>Diagnóstico rápido para que sigas tu viaje.</li><li>Te atendemos en inglés.</li></ul>
+        <ul class="en"><li>Space and equipment for large vehicles.</li><li>Fast diagnostics so you can get back on the road.</li><li>We speak English.</li></ul>
+        <a class="btn" href="tel:+34952502992"><span class="es">Llamar ahora</span><span class="en">Call now</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-sv">
+    <h2 class="t" id="t-sv"><span class="es">Servicios</span><span class="en">Services</span></h2>
+    <p class="lead"><span class="es">Servicios de ejemplo para la propuesta: en la web final pondríamos exactamente los vuestros.</span><span class="en">Sample services for this proposal: the final site would list your exact services.</span></p>
+    <div class="svcs">
+      <div class="svc"><h3><span class="es">Mecánica general</span><span class="en">General repairs</span></h3><p class="es">Motor, frenos, embrague y suspensión.</p><p class="en">Engine, brakes, clutch and suspension.</p></div>
+      <div class="svc"><h3><span class="es">Diagnóstico</span><span class="en">Diagnostics</span></h3><p class="es">Lectura de averías con equipo electrónico.</p><p class="en">Electronic fault diagnosis.</p></div>
+      <div class="svc"><h3><span class="es">Electricidad</span><span class="en">Electrics</span></h3><p class="es">Fallos eléctricos del vehículo y del remolque.</p><p class="en">Vehicle and trailer electrical faults.</p></div>
+      <div class="svc"><h3><span class="es">Mantenimiento</span><span class="en">Servicing</span></h3><p class="es">Revisiones, aceite y filtros, preparación para la ITV.</p><p class="en">Servicing, oil and filters, MOT (ITV) prep.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-in">
+    <h2 class="t" id="t-in"><span class="es">Horario y ubicación</span><span class="en">Hours and location</span></h2>
+    <p class="lead">Calle Ignacio Zuloaga, 1 · 29700 Vélez-Málaga</p>
+    <div class="info">
+      <div class="panel"><h3><span class="es">Horario</span><span class="en">Opening hours</span></h3>
+        <dl class="h">
+          <dt><span class="es">Lunes a viernes</span><span class="en">Monday to Friday</span></dt><dd>8:00 – 14:00 · 16:00 – 18:00</dd>
+          <dt><span class="es">Sábado y domingo</span><span class="en">Weekends</span></dt><dd><span class="es">Cerrado</span><span class="en">Closed</span></dd>
+        </dl>
+      </div>
+      <div class="panel"><h3><span class="es">Contacto</span><span class="en">Contact</span></h3>
+        <a class="tel" href="tel:+34952502992">952 50 29 92</a><br>
+        <a class="btn" href="tel:+34952502992"><span class="es">Llamar</span><span class="en">Call</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="wrap"><span class="es">© 2026 Talleres Pérez Gómez · Propuesta de diseño, no publicada</span><span class="en">© 2026 Talleres Pérez Gómez · Design proposal, not published</span></footer>
+
+<script>
+  const btns = document.querySelectorAll(".langs button");
+  btns.forEach(b => b.addEventListener("click", () => {
+    document.body.dataset.lang = b.dataset.set;
+    document.documentElement.lang = b.dataset.set;
+    btns.forEach(x => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+  }));
+</script>
+</body>
+</html>

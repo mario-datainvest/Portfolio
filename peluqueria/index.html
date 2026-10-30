@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salón Brisa · Peluquería en Vélez-Málaga</title>
+<meta name="description" content="Cortes, color y peinados en Vélez-Málaga. Reserva tu cita por WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mist: #F3EEF6;
+    --plum: #2E1A3A;
+    --plum-soft: #5B4568;
+    --pink: #E8A6C8;
+    --mint: #7FC8B8;
+    --white: #FFFFFF;
+    --radius-lg: 36px;
+    --radius-sm: 14px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--mist);
+    color: var(--plum);
+    font: 400 17px/1.6 "Manrope", system-ui, sans-serif;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--plum); outline-offset: 3px; border-radius: 6px; }
+  .wrap { width: min(1120px, 100% - 32px); margin-inline: auto; }
+
+  /* top bar */
+  .top { display: flex; align-items: center; justify-content: space-between; padding: 22px 0; }
+  .logo { font: 800 22px/1 "Unbounded", sans-serif; text-decoration: none; letter-spacing: -0.02em; }
+  .logo span { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--pink); margin-left: 4px; }
+  .top nav { display: flex; gap: 22px; font-weight: 500; }
+  .top nav a { text-decoration: none; }
+  .top nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+  @media (max-width: 640px) { .top nav { display: none; } }
+
+  /* hero */
+  .hero { position: relative; overflow: hidden; background: var(--plum); color: var(--white); border-radius: var(--radius-lg); padding: clamp(40px, 7vw, 88px) clamp(24px, 5vw, 64px); }
+  .waves { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .waves path { fill: none; stroke-width: 2.5; stroke-linecap: round; }
+  .hero-inner { position: relative; display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: end; }
+  @media (max-width: 860px) { .hero-inner { grid-template-columns: 1fr; } }
+  .hero h1 { font: 800 clamp(44px, 8vw, 104px)/0.95 "Unbounded", sans-serif; letter-spacing: -0.04em; margin: 0 0 22px; }
+  .hero p { max-width: 44ch; color: #E9DFF0; font-size: 19px; margin: 0; }
+  .book { background: var(--white); color: var(--plum); border-radius: 26px; padding: 26px; }
+  .book h2 { font: 700 20px/1.2 "Unbounded", sans-serif; margin: 0 0 6px; }
+  .book p { color: var(--plum-soft); font-size: 15px; margin: 0 0 18px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--mint); color: var(--plum); font-weight: 700; text-decoration: none; padding: 15px 22px; border-radius: 999px; transition: transform .15s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn svg { width: 20px; height: 20px; }
+  .book .alt { display: block; margin-top: 14px; font-size: 15px; color: var(--plum-soft); }
+
+  section { padding: clamp(56px, 9vw, 104px) 0 0; }
+  .sec-title { font: 700 clamp(30px, 4.6vw, 48px)/1.05 "Unbounded", sans-serif; letter-spacing: -0.03em; margin: 0 0 12px; }
+  .sec-lead { max-width: 56ch; color: var(--plum-soft); margin: 0 0 36px; }
+
+  /* price list */
+  .menu { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
+  @media (max-width: 760px) { .menu { grid-template-columns: 1fr; } }
+  .menu h3 { font: 700 15px/1 "Unbounded", sans-serif; margin: 26px 0 8px; color: var(--plum-soft); }
+  .item { display: flex; align-items: baseline; gap: 10px; padding: 12px 0; border-bottom: 1px solid #DCCFE4; }
+  .item b { font-weight: 700; }
+  .item small { display: block; color: var(--plum-soft); font-size: 14px; }
+  .item .dots { flex: 1; border-bottom: 2px dotted #C8B6D4; transform: translateY(-5px); }
+  .item .price { font: 700 18px/1 "Unbounded", sans-serif; white-space: nowrap; }
+
+  /* team */
+  .team { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 760px) { .team { grid-template-columns: 1fr; } }
+  .person { background: var(--white); border-radius: var(--radius-sm); padding: 22px; display: flex; gap: 16px; align-items: center; }
+  .avatar { flex: none; width: 72px; height: 72px; border-radius: 46% 54% 60% 40% / 50% 42% 58% 50%; display: grid; place-items: center; font: 800 26px/1 "Unbounded", sans-serif; color: var(--plum); }
+  .person h3 { margin: 0; font-size: 18px; }
+  .person p { margin: 2px 0 0; color: var(--plum-soft); font-size: 15px; }
+
+  /* visit */
+  .visit { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .visit { grid-template-columns: 1fr; } }
+  .panel { background: var(--white); border-radius: var(--radius-sm); padding: 28px; }
+  .panel h3 { font: 700 18px/1.2 "Unbounded", sans-serif; margin: 0 0 14px; }
+  .hours { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 8px 24px; }
+  .hours dt { font-weight: 700; }
+  .hours dd { margin: 0; color: var(--plum-soft); }
+  .map { background: var(--pink); border-radius: var(--radius-sm); position: relative; min-height: 260px; overflow: hidden; }
+  .map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .map .pin { position: absolute; left: 50%; top: 46%; transform: translate(-50%, -100%); background: var(--plum); color: var(--white); padding: 10px 16px; border-radius: 999px; font-weight: 700; font-size: 15px; white-space: nowrap; }
+
+  footer { margin-top: clamp(56px, 9vw, 104px); padding: 28px 0 40px; border-top: 1px solid #DCCFE4; font-size: 14px; color: var(--plum-soft); display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .waves path { stroke-dasharray: 1400; stroke-dashoffset: 1400; animation: draw 2.4s cubic-bezier(.3,.6,.2,1) forwards; }
+    .waves path:nth-child(2) { animation-delay: .15s; }
+    .waves path:nth-child(3) { animation-delay: .3s; }
+    .waves path:nth-child(4) { animation-delay: .45s; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#">Brisa<span aria-hidden="true"></span></a>
+    <nav aria-label="Principal">
+      <a href="#precios">Precios</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#visitanos">Visítanos</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <svg class="waves" viewBox="0 0 1200 600" preserveAspectRatio="none" aria-hidden="true"><g transform="translate(0 95)">
+        <path d="M-20 420 C 200 300, 380 560, 620 420 S 1000 260, 1240 380" stroke="#E8A6C8"/>
+        <path d="M-20 460 C 220 340, 400 600, 640 460 S 1020 300, 1240 420" stroke="#7FC8B8"/>
+        <path d="M-20 500 C 240 380, 420 640, 660 500 S 1040 340, 1240 460" stroke="#E8A6C8" opacity=".55"/>
+        <path d="M-20 540 C 260 420, 440 680, 680 540 S 1060 380, 1240 500" stroke="#7FC8B8" opacity=".45"/>
+      </g></svg>
+      <div class="hero-inner">
+        <div>
+          <h1>Salón Brisa</h1>
+          <p>Cortes, color y peinados en el centro de Vélez-Málaga. Te escuchamos antes de coger las tijeras.</p>
+        </div>
+        <div class="book">
+          <h2>Pide tu cita</h2>
+          <p>Escríbenos por WhatsApp con el servicio y el día que prefieres. Respondemos en menos de una hora.</p>
+          <a class="btn" href="https://wa.me/34600000000" aria-label="Reservar cita por WhatsApp">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 2.9 2.9 0 0 0-.9 2.2 5 5 0 0 0 1 2.7 11.5 11.5 0 0 0 4.4 3.9c1.6.7 2.3.8 3.1.6a2.7 2.7 0 0 0 1.8-1.2 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.5-.3z"/></svg>
+            Reservar por WhatsApp
+          </a>
+          <a class="alt" href="tel:+34600000000">O llámanos: 600 00 00 00</a>
+        </div>
+      </div>
+    </div>
+
+    <section id="precios" aria-labelledby="t-precios">
+      <h2 class="sec-title" id="t-precios">Servicios y precios</h2>
+      <p class="sec-lead">Precios con lavado incluido. Si no sabes qué pedir, la primera consulta de color es gratis.</p>
+      <div class="menu">
+        <div>
+          <h3>Corte</h3>
+          <div class="item"><div><b>Corte mujer</b><small>Lavado, corte y secado</small></div><span class="dots"></span><span class="price">24 €</span></div>
+          <div class="item"><div><b>Corte hombre</b><small>Tijera o máquina</small></div><span class="dots"></span><span class="price">14 €</span></div>
+          <div class="item"><div><b>Corte infantil</b><small>Hasta 12 años</small></div><span class="dots"></span><span class="price">11 €</span></div>
+          <div class="item"><div><b>Arreglo de barba</b></div><span class="dots"></span><span class="price">8 €</span></div>
+        </div>
+        <div>
+          <h3>Color y peinado</h3>
+          <div class="item"><div><b>Tinte raíz</b></div><span class="dots"></span><span class="price">32 €</span></div>
+          <div class="item"><div><b>Mechas o balayage</b><small>Según largo</small></div><span class="dots"></span><span class="price">desde 55 €</span></div>
+          <div class="item"><div><b>Peinado de evento</b><small>Bodas, comuniones, graduaciones</small></div><span class="dots"></span><span class="price">35 €</span></div>
+          <div class="item"><div><b>Tratamiento hidratante</b></div><span class="dots"></span><span class="price">18 €</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="equipo" aria-labelledby="t-equipo">
+      <h2 class="sec-title" id="t-equipo">Quién te atiende</h2>
+      <p class="sec-lead">Tres personas, cada una con su especialidad. Al reservar, dinos si prefieres a alguien.</p>
+      <div class="team">
+        <div class="person"><div class="avatar" style="background:var(--pink)">L</div><div><h3>Lucía</h3><p>Color y balayage</p></div></div>
+        <div class="person"><div class="avatar" style="background:var(--mint)">A</div><div><h3>Andrés</h3><p>Cortes de hombre y barba</p></div></div>
+        <div class="person"><div class="avatar" style="background:#D9C6E8">M</div><div><h3>Marina</h3><p>Peinados y recogidos</p></div></div>
+      </div>
+    </section>
+
+    <section id="visitanos" aria-labelledby="t-visit">
+      <h2 class="sec-title" id="t-visit">Visítanos</h2>
+      <p class="sec-lead">A dos minutos de la plaza. Aparcamiento público justo enfrente.</p>
+      <div class="visit">
+        <div class="panel">
+          <h3>Horario</h3>
+          <dl class="hours">
+            <dt>Lunes</dt><dd>Cerrado</dd>
+            <dt>Martes a viernes</dt><dd>9:30 – 14:00 y 16:30 – 20:30</dd>
+            <dt>Sábado</dt><dd>9:00 – 14:00</dd>
+            <dt>Domingo</dt><dd>Cerrado</dd>
+          </dl>
+          <h3 style="margin-top:24px">Dirección</h3>
+          <p style="margin:0;color:var(--plum-soft)">Calle Ejemplo, 12 · 29700 Vélez-Málaga</p>
+        </div>
+        <div class="map" role="img" aria-label="Mapa ilustrativo de la ubicación">
+          <svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <g stroke="#FFFFFF" stroke-width="14" fill="none" opacity=".7">
+              <path d="M-10 70 L410 110"/><path d="M-10 190 L410 170"/><path d="M120 -10 L150 270"/><path d="M290 -10 L260 270"/>
+            </g>
+            <g stroke="#FFFFFF" stroke-width="5" fill="none" opacity=".5">
+              <path d="M-10 130 L410 140"/><path d="M60 -10 L80 270"/><path d="M350 -10 L340 270"/>
+            </g>
+            <circle cx="200" cy="140" r="34" fill="#7FC8B8" opacity=".5"/>
+          </svg>
+          <span class="pin">Salón Brisa</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Salón Brisa</span>
+    <span>Proyecto de portfolio · negocio ficticio, datos de ejemplo</span>
+  </footer>
+</div>
+</body>
+</html>

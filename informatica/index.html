@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nodo Informática · Reparación de ordenadores</title>
+<meta name="description" content="Reparamos ordenadores y portátiles. Diagnóstico gratis y presupuesto antes de tocar nada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sky: #EAF0FF;
+    --navy: #0A2A66;
+    --navy-2: #3A5288;
+    --amber: #FFC531;
+    --blue: #2F6BFF;
+    --white: #FFFFFF;
+    --line: #C9D6F5;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--sky); color: var(--navy); font: 400 17px/1.6 "Archivo", system-ui, sans-serif; font-stretch: 100%; }
+  a { color: inherit; }
+  :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+  .wrap { width: min(1160px, 100% - 32px); margin-inline: auto; }
+  .wide { font-stretch: 125%; }
+
+  .top { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 900; font-size: 22px; font-stretch: 125%; }
+  .logo i { width: 26px; height: 26px; background: var(--blue); border-radius: 6px; position: relative; }
+  .logo i::after { content: ""; position: absolute; inset: 8px; background: var(--amber); border-radius: 2px; }
+  .call { font-weight: 700; text-decoration: none; background: var(--navy); color: var(--white); padding: 10px 18px; border-radius: 8px; }
+
+  .hero { display: grid; grid-template-columns: 1fr 1.05fr; gap: 40px; padding: 40px 0 20px; align-items: start; }
+  @media (max-width: 900px) { .hero { grid-template-columns: 1fr; } }
+  h1 { font-size: clamp(42px, 6.4vw, 82px); line-height: .95; font-weight: 900; font-stretch: 125%; letter-spacing: -0.02em; margin: 0 0 22px; }
+  .hero p { max-width: 42ch; color: var(--navy-2); font-size: 19px; margin: 0 0 26px; }
+  .facts { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
+  .facts li { background: var(--white); border: 1.5px solid var(--line); border-radius: 8px; padding: 8px 14px; font-weight: 600; font-size: 15px; }
+
+  /* diagnostic tool */
+  .diag { background: var(--navy); color: var(--white); border-radius: 18px; padding: 28px; box-shadow: 10px 10px 0 var(--blue); }
+  .diag h2 { margin: 0 0 4px; font-size: 24px; font-weight: 800; font-stretch: 112%; }
+  .diag > p { margin: 0 0 18px; color: #B9C7EA; font-size: 15px; }
+  .opts { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .opts button { font: inherit; font-weight: 600; text-align: left; background: #14377D; color: var(--white); border: 2px solid #24489A; border-radius: 10px; padding: 14px; cursor: pointer; transition: border-color .15s, background .15s; }
+  .opts button:hover { border-color: var(--amber); }
+  .opts button[aria-pressed="true"] { background: var(--amber); color: var(--navy); border-color: var(--amber); }
+  .result { margin-top: 18px; background: var(--white); color: var(--navy); border-radius: 12px; padding: 20px; min-height: 132px; }
+  .result .empty { color: var(--navy-2); margin: 0; }
+  .result h3 { margin: 0 0 8px; font-size: 18px; }
+  .result dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin: 0 0 10px; }
+  .result dt { color: var(--navy-2); }
+  .result dd { margin: 0; font-weight: 700; }
+  .result p { margin: 0; font-size: 15px; color: var(--navy-2); }
+  @media (prefers-reduced-motion: no-preference) { .result.show { animation: pop .25s ease; } @keyframes pop { from { opacity: 0; transform: translateY(6px); } } }
+
+  section { padding: clamp(60px, 9vw, 110px) 0 0; }
+  h2.s { font-size: clamp(30px, 4.4vw, 50px); line-height: 1; font-weight: 900; font-stretch: 125%; letter-spacing: -0.02em; margin: 0 0 14px; }
+  .lead { max-width: 58ch; color: var(--navy-2); margin: 0 0 34px; }
+
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--navy); }
+  @media (max-width: 860px) { .services { grid-template-columns: 1fr; } }
+  .svc { padding: 26px 26px 30px 0; border-bottom: 1.5px solid var(--line); }
+  .services .svc:not(:nth-child(3n+1)) { padding-left: 26px; border-left: 1.5px solid var(--line); }
+  @media (max-width: 860px) { .services .svc:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; } }
+  .svc h3 { margin: 0 0 8px; font-size: 20px; font-weight: 800; font-stretch: 112%; }
+  .svc p { margin: 0 0 12px; color: var(--navy-2); }
+  .svc .from { font-weight: 700; }
+
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding: 0; margin: 0; list-style: none; counter-reset: s; }
+  @media (max-width: 860px) { .steps { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
+  .steps li { counter-increment: s; background: var(--white); border-radius: 12px; padding: 22px; border: 1.5px solid var(--line); }
+  .steps li::before { content: counter(s); display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--amber); font-weight: 900; margin-bottom: 14px; }
+  .steps b { display: block; font-size: 18px; margin-bottom: 4px; }
+  .steps span { color: var(--navy-2); font-size: 15px; }
+
+  .contact { display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; background: var(--blue); color: var(--white); border-radius: 18px; padding: clamp(28px, 5vw, 56px); }
+  @media (max-width: 860px) { .contact { grid-template-columns: 1fr; } }
+  .contact h2 { margin: 0 0 10px; font-size: clamp(28px, 4vw, 44px); line-height: 1; font-weight: 900; font-stretch: 125%; }
+  .contact p { margin: 0; color: #DCE6FF; }
+  .contact dl { margin: 0; display: grid; gap: 14px; }
+  .contact dt { font-size: 14px; color: #DCE6FF; }
+  .contact dd { margin: 0; font-weight: 700; font-size: 19px; }
+  .contact dd a { text-decoration: none; }
+  .contact dd a:hover { text-decoration: underline; }
+
+  footer { padding: 40px 0; font-size: 14px; color: var(--navy-2); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#"><i aria-hidden="true"></i>Nodo</a>
+    <a class="call" href="tel:+34600000000">Llamar</a>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div>
+        <h1>Tu ordenador, arreglado sin sustos</h1>
+        <p>Reparamos portátiles y ordenadores de sobremesa en Vélez-Málaga. Diagnóstico gratis y presupuesto cerrado antes de tocar nada.</p>
+        <ul class="facts">
+          <li>Diagnóstico gratis</li>
+          <li>Garantía de 6 meses</li>
+          <li>Recogida a domicilio</li>
+        </ul>
+      </div>
+
+      <div class="diag" aria-labelledby="t-diag">
+        <h2 id="t-diag">¿Qué le pasa a tu equipo?</h2>
+        <p>Elige el problema y te damos un precio orientativo.</p>
+        <div class="opts" role="group" aria-label="Problemas habituales">
+          <button type="button" data-k="lento" aria-pressed="false">Va muy lento</button>
+          <button type="button" data-k="enciende" aria-pressed="false">No enciende</button>
+          <button type="button" data-k="virus" aria-pressed="false">Virus o anuncios raros</button>
+          <button type="button" data-k="pantalla" aria-pressed="false">Pantalla rota</button>
+          <button type="button" data-k="datos" aria-pressed="false">He perdido archivos</button>
+          <button type="button" data-k="nuevo" aria-pressed="false">Quiero uno nuevo</button>
+        </div>
+        <div class="result" id="result" aria-live="polite">
+          <p class="empty">Toca una opción para ver qué solemos hacer, cuánto tarda y cuánto cuesta.</p>
+        </div>
+      </div>
+    </div>
+
+    <section aria-labelledby="t-svc">
+      <h2 class="s" id="t-svc">Lo que hacemos</h2>
+      <p class="lead">Para particulares y pequeños negocios. Si no está en la lista, pregúntanos.</p>
+      <div class="services">
+        <div class="svc"><h3>Cambio a disco SSD</h3><p>La mejora que más se nota: un portátil de hace 6 años arranca en segundos. Pasamos todos tus archivos.</p><span class="from">Desde 69 € con disco incluido</span></div>
+        <div class="svc"><h3>Limpieza y puesta a punto</h3><p>Limpieza interna, pasta térmica nueva, programas innecesarios fuera y Windows actualizado.</p><span class="from">Desde 35 €</span></div>
+        <div class="svc"><h3>Eliminación de virus</h3><p>Quitamos el malware, revisamos tus cuentas y te dejamos el equipo protegido.</p><span class="from">Desde 40 €</span></div>
+        <div class="svc"><h3>Recuperación de datos</h3><p>Fotos, documentos y trabajos de discos dañados o borrados por error. Sin recuperación, no cobramos.</p><span class="from">Presupuesto tras diagnóstico</span></div>
+        <div class="svc"><h3>Montaje a medida</h3><p>Ordenadores para jugar, estudiar o trabajar, con piezas elegidas para tu presupuesto.</p><span class="from">Te asesoramos gratis</span></div>
+        <div class="svc"><h3>Informática para negocios</h3><p>Redes WiFi, copias de seguridad, impresoras y mantenimiento mensual para tu oficina o tienda.</p><span class="from">Cuota mensual a medida</span></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="t-steps">
+      <h2 class="s" id="t-steps">Cómo funciona</h2>
+      <p class="lead">Nunca reparamos nada sin que hayas aceptado el precio.</p>
+      <ol class="steps">
+        <li><b>Nos lo traes</b><span>O pasamos a recogerlo por tu casa.</span></li>
+        <li><b>Diagnóstico gratis</b><span>En 24 horas sabemos qué tiene.</span></li>
+        <li><b>Presupuesto cerrado</b><span>Te llamamos con el precio final. Tú decides.</span></li>
+        <li><b>Listo y con garantía</b><span>6 meses de garantía en la reparación.</span></li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="t-contact">
+      <div class="contact">
+        <div>
+          <h2 id="t-contact">Ven a vernos o escríbenos</h2>
+          <p>Lunes a viernes de 10:00 a 14:00 y de 17:00 a 20:30. Sábados de 10:00 a 13:30.</p>
+        </div>
+        <dl>
+          <div><dt>Teléfono y WhatsApp</dt><dd><a href="https://wa.me/34600000000">600 00 00 00</a></dd></div>
+          <div><dt>Correo</dt><dd><a href="mailto:hola@ejemplo.com">hola@ejemplo.com</a></dd></div>
+          <div><dt>Tienda</dt><dd>Avenida Ejemplo, 45 · Vélez-Málaga</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Nodo Informática</span>
+    <span>Proyecto de portfolio · negocio ficticio, precios de ejemplo</span>
+  </footer>
+</div>
+
+<script>
+  const data = {
+    lento:    { t: "Puesta a punto o cambio a SSD", tiempo: "24–48 horas", precio: "35 – 69 €", nota: "En la mayoría de casos el culpable es un disco antiguo. Con un SSD notarás el cambio desde el primer arranque." },
+    enciende: { t: "Diagnóstico de hardware", tiempo: "24 horas para el diagnóstico", precio: "Diagnóstico gratis", nota: "Suele ser la fuente, la batería o la placa. Te llamamos con el precio exacto antes de reparar." },
+    virus:    { t: "Limpieza de malware", tiempo: "Mismo día o 24 horas", precio: "Desde 40 €", nota: "Cambia ya las contraseñas de tu correo y tu banco desde otro dispositivo de confianza." },
+    pantalla: { t: "Cambio de pantalla", tiempo: "2–4 días (pedimos la pieza)", precio: "Desde 89 €", nota: "El precio depende del modelo. Tráenos el portátil o dinos la marca y el modelo exacto." },
+    datos:    { t: "Recuperación de datos", tiempo: "Según el estado del disco", precio: "Si no recuperamos, no pagas", nota: "Deja de usar ese disco ahora: cuanto menos se escriba en él, más fácil es recuperar." },
+    nuevo:    { t: "Asesoramiento y montaje", tiempo: "3–5 días", precio: "Asesoramiento gratis", nota: "Cuéntanos para qué lo quieres y cuánto quieres gastar, y te proponemos dos o tres opciones." }
+  };
+  const result = document.getElementById("result");
+  const buttons = document.querySelectorAll(".opts button");
+  buttons.forEach(b => b.addEventListener("click", () => {
+    buttons.forEach(x => x.setAttribute("aria-pressed", x === b ? "true" : "false"));
+    const d = data[b.dataset.k];
+    result.innerHTML = `<h3>${d.t}</h3><dl><dt>Plazo</dt><dd>${d.tiempo}</dd><dt>Precio</dt><dd>${d.precio}</dd></dl><p>${d.nota}</p>`;
+    result.classList.remove("show"); void result.offsetWidth; result.classList.add("show");
+  }));
+</script>
+</body>
+</html>
