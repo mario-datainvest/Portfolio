@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Marta Miguel · Peluquería en Vélez-Málaga</title>
+<meta name="description" content="Propuesta de diseño web para la peluquería Marta Miguel, Vélez-Málaga. Borrador no publicado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1C1917; --ink-2:#44403C; --gold:#A16207; --gold-soft:#E9D9B8;
+  --bg:#FAFAF9; --paper:#FFFFFF; --cream:#F4EFE6; --line:#D6D3D1; --muted:#57534E;
+  --serif:"Cormorant",Georgia,serif; --sans:"Montserrat",system-ui,sans-serif;
+  --wrap:min(1120px,100% - 40px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.wrap{width:var(--wrap);margin-inline:auto}
+.draft{background:var(--ink);color:var(--gold-soft);font-size:12.5px;letter-spacing:.08em;text-align:center;padding:8px 16px;text-transform:uppercase}
+.draft strong{color:#fff;font-weight:600}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(250,250,249,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font-family:var(--serif);font-size:26px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.logo span{color:var(--gold)}
+.nav ul{display:flex;gap:28px;list-style:none}
+.nav ul a{text-decoration:none;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);padding:12px 0;transition:color .2s}
+.nav ul a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 26px;border:1px solid var(--ink);background:var(--ink);color:#fff;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.btn:hover{background:var(--gold);border-color:var(--gold)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.btn svg{width:18px;height:18px;flex:none}
+.nav .btn{min-height:44px;padding:0 18px}
+
+/* hero */
+.hero{padding:clamp(56px,9vw,120px) 0 clamp(56px,8vw,100px);position:relative}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,6vw,80px);align-items:center}
+.eyebrow{font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:600;display:flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:36px;height:1px;background:var(--gold)}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,7.4vw,92px);line-height:.98;letter-spacing:-.01em;margin:22px 0 26px}
+h1 em{font-style:italic;color:var(--gold)}
+.lead{font-size:clamp(16px,1.6vw,18px);color:var(--muted);max-width:46ch;margin-bottom:34px}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px}
+.rating{display:flex;align-items:center;gap:14px;margin-top:38px;padding-top:26px;border-top:1px solid var(--line);max-width:420px}
+.rating b{font-family:var(--serif);font-size:44px;font-weight:500;line-height:1}
+.stars{color:var(--gold);letter-spacing:3px;font-size:15px}
+.rating small{display:block;font-size:13px;color:var(--muted)}
+.art{aspect-ratio:4/5;background:var(--cream);position:relative;overflow:hidden;border:1px solid var(--line)}
+.art svg{position:absolute;inset:0;width:100%;height:100%}
+.art .tag{position:absolute;left:20px;bottom:20px;right:20px;background:var(--paper);padding:16px 18px;border-left:2px solid var(--gold);font-size:13px;color:var(--ink-2)}
+.art .tag b{display:block;font-family:var(--serif);font-size:21px;font-weight:500;color:var(--ink)}
+
+/* sections */
+section{padding:clamp(64px,9vw,112px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:48px;flex-wrap:wrap}
+h2{font-family:var(--serif);font-weight:400;font-size:clamp(36px,5vw,58px);line-height:1.04}
+h2 em{font-style:italic;color:var(--gold)}
+.sec-head p{max-width:40ch;color:var(--muted)}
+.num{font-family:var(--serif);font-size:15px;color:var(--gold);letter-spacing:.1em;display:block;margin-bottom:12px}
+
+.voices{background:var(--ink);color:#F5F5F4}
+.voices h2{color:#fff}
+.voices .sec-head p{color:#D6D3D1}
+.v-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#3a3532;border:1px solid #3a3532}
+.v-item{background:var(--ink);padding:34px 30px}
+.v-item h3{font-family:var(--serif);font-size:27px;font-weight:500;margin-bottom:10px;color:#fff}
+.v-item p{color:#D6D3D1;font-size:15px}
+.note{margin-top:22px;font-size:13px;color:#A8A29E;font-style:italic}
+
+.svc{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line)}
+.svc article{padding:34px 4px 34px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:56px 1fr auto;gap:18px;align-items:start}
+.svc article:nth-child(odd){padding-right:40px;border-right:1px solid var(--line)}
+.svc article:nth-child(even){padding-left:40px}
+.svc .i{font-family:var(--serif);font-size:20px;color:var(--gold)}
+.svc h3{font-family:var(--serif);font-weight:500;font-size:27px;line-height:1.1;margin-bottom:8px}
+.svc p{font-size:14.5px;color:var(--muted)}
+.price{font-family:var(--serif);font-size:22px;white-space:nowrap}
+.price small{display:block;font-family:var(--sans);font-size:11px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;text-align:right}
+.example{display:inline-block;margin-top:18px;font-size:12.5px;color:var(--muted);background:var(--cream);padding:6px 12px}
+
+/* diagnóstico */
+.diag{background:var(--cream)}
+.d-card{background:var(--paper);border:1px solid var(--line);display:grid;grid-template-columns:1fr 1fr}
+.d-q{padding:clamp(28px,4vw,48px)}
+.d-q fieldset{border:0;margin-bottom:28px}
+.d-q legend{font-family:var(--serif);font-size:23px;font-weight:500;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chips label{cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--line);font-size:14px;transition:all .2s;background:var(--bg)}
+.chips label:hover span{border-color:var(--ink)}
+.chips input:checked+span{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chips input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.d-r{background:var(--ink);color:#fff;padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;justify-content:center}
+.d-r .num{color:var(--gold-soft)}
+.d-r h3{font-family:var(--serif);font-weight:400;font-size:clamp(30px,3.4vw,42px);line-height:1.08;margin-bottom:16px}
+.d-r p{color:#D6D3D1;margin-bottom:28px;font-size:15px}
+.d-r .btn{background:var(--gold);border-color:var(--gold);align-self:flex-start}
+.d-r .btn:hover{background:#fff;color:var(--ink);border-color:#fff}
+
+/* visita */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,80px)}
+.info dl{display:grid;gap:24px}
+.info dt{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:4px}
+.info dd{font-family:var(--serif);font-size:24px;line-height:1.3}
+.info dd a{text-decoration-color:var(--gold);text-underline-offset:4px}
+.hours{width:100%;border-collapse:collapse}
+.hours caption{text-align:left;font-family:var(--serif);font-size:30px;margin-bottom:16px}
+.hours td{padding:14px 0;border-bottom:1px solid var(--line);font-size:15px}
+.hours td:last-child{text-align:right;color:var(--ink-2)}
+.hours tr.today td{color:var(--gold);font-weight:600}
+.hours tr.today td:first-child::after{content:" · hoy";font-weight:400;font-size:13px}
+.closed{color:#78716C!important}
+
+footer{border-top:1px solid var(--line);padding:36px 0 48px;font-size:13px;color:var(--muted)}
+.f-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .45s ease-out,transform .45s ease-out}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .hero-grid,.visit-grid,.d-card{grid-template-columns:1fr}
+  .art{aspect-ratio:16/11}
+  .v-grid{grid-template-columns:1fr}
+  .svc{grid-template-columns:1fr}
+  .svc article:nth-child(odd),.svc article:nth-child(even){padding:28px 0;border-right:0}
+}
+@media (max-width:480px){
+  .logo{font-size:21px;letter-spacing:.1em}
+  .nav .btn{padding:0 14px;font-size:12px}
+  .svc article{grid-template-columns:36px 1fr;}
+  .svc .price{grid-column:2;}
+  .price small{text-align:left}
+  .cta-row .btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="draft" role="note"><strong>Propuesta de diseño para Marta Miguel</strong> · Borrador</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#inicio" class="logo">Marta<span>·</span>Miguel</a>
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#diagnostico">Diagnóstico</a></li>
+        <li><a href="#visita">Visítanos</a></li>
+      </ul>
+    </nav>
+    <a class="btn" href="tel:+34653196231" aria-label="Llamar para pedir cita: 653 19 62 31">Pedir cita</a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <p class="eyebrow">Peluquería · Vélez-Málaga</p>
+        <h1>Tu pelo, tratado con <em>calma</em> y oficio.</h1>
+        <p class="lead">Corte, color y tratamientos a medida de cada tipo de cabello, en un salón pensado para que la cita sea un rato para ti.</p>
+        <div class="cta-row">
+          <a class="btn" href="tel:+34653196231">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+            653 19 62 31
+          </a>
+          <a class="btn ghost" href="#diagnostico">Qué necesita mi pelo</a>
+        </div>
+        <div class="rating">
+          <b>5,0</b>
+          <div><span class="stars" aria-hidden="true">★★★★★</span><small>75 reseñas en Google</small></div>
+        </div>
+      </div>
+      <div class="art reveal" aria-hidden="true">
+        <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMid slice">
+          <rect width="400" height="500" fill="#F4EFE6"/>
+          <g fill="none" stroke="#A16207" stroke-width="1.1" opacity=".75">
+            <path d="M40 -20 C 160 120, 60 260, 200 360 S 330 470, 300 540"/>
+            <path d="M70 -20 C 190 120, 90 260, 230 360 S 360 470, 330 540"/>
+            <path d="M100 -20 C 220 120, 120 260, 260 360 S 390 470, 360 540"/>
+            <path d="M130 -20 C 250 120, 150 260, 290 360 S 420 470, 390 540"/>
+          </g>
+          <g fill="none" stroke="#1C1917" stroke-width=".8" opacity=".35">
+            <path d="M55 -20 C 175 120, 75 260, 215 360 S 345 470, 315 540"/>
+            <path d="M115 -20 C 235 120, 135 260, 275 360 S 405 470, 375 540"/>
+          </g>
+          <circle cx="300" cy="120" r="58" fill="none" stroke="#1C1917" stroke-width=".8" opacity=".4"/>
+        </svg>
+        <div class="tag"><b>Aquí irían vuestras fotos</b>El salón y trabajos reales, con vuestro permiso.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="voices">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><span class="num">01</span><h2>Lo que más <em>repiten</em><br>vuestras clientas</h2></div>
+        <p>Resumen de lo que se repite en las 75 reseñas de Google.</p>
+      </div>
+      <div class="v-grid reveal">
+        <div class="v-item"><h3>Ambiente premium</h3><p>Un salón cuidado y ordenado, elegante pero relajado, donde la cita se disfruta.</p></div>
+        <div class="v-item"><h3>Consejo a medida</h3><p>Escucháis lo que quiere cada clienta y la asesoráis según su tipo de pelo, sin imponer.</p></div>
+        <div class="v-item"><h3>Pelo recuperado</h3><p>Muchas llegan con el cabello dañado y destacan cómo mejora con los tratamientos y productos.</p></div>
+      </div>
+      <p class="note">En la web final irían citas reales de vuestras clientas, con su permiso.</p>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><span class="num">02</span><h2>Servicios</h2></div>
+        <p>Cada servicio empieza por una consulta: primero entendemos tu pelo, luego trabajamos.</p>
+      </div>
+      <div class="svc reveal">
+        <article><span class="i">I</span><div><h3>Corte y peinado</h3><p>Cortes pensados para tu cara, tu textura y el tiempo que quieres dedicarle cada mañana.</p></div><div class="price">00 €<small>desde</small></div></article>
+        <article><span class="i">II</span><div><h3>Color y mechas</h3><p>Babylights, balayage y color de larga duración con acabado natural.</p></div><div class="price">00 €<small>desde</small></div></article>
+        <article><span class="i">III</span><div><h3>Tratamientos</h3><p>Reparación, hidratación y brillo para cabellos castigados por el sol, el tinte o el calor.</p></div><div class="price">00 €<small>desde</small></div></article>
+        <article><span class="i">IV</span><div><h3>Novias y eventos</h3><p>Recogidos y peinados para bodas, comuniones y días especiales, con prueba previa.</p></div><div class="price">00 €<small>desde</small></div></article>
+      </div>
+      <p class="example">Servicios y precios de ejemplo: se sustituyen por los vuestros.</p>
+    </div>
+  </section>
+
+  <section class="diag" id="diagnostico">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div><span class="num">03</span><h2>¿Qué necesita <em>tu pelo</em>?</h2></div>
+        <p>Dos preguntas y te decimos por dónde empezar. Luego lo hablamos en el salón.</p>
+      </div>
+      <div class="d-card reveal">
+        <form class="d-q" id="dform">
+          <fieldset>
+            <legend>¿Cómo notas tu pelo ahora?</legend>
+            <div class="chips">
+              <label><input type="radio" name="estado" value="danado" checked><span>Seco o dañado</span></label>
+              <label><input type="radio" name="estado" value="apagado"><span>Sin brillo</span></label>
+              <label><input type="radio" name="estado" value="bien"><span>Bien, quiero un cambio</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>¿Qué buscas?</legend>
+            <div class="chips">
+              <label><input type="radio" name="meta" value="color" checked><span>Color o mechas</span></label>
+              <label><input type="radio" name="meta" value="corte"><span>Un buen corte</span></label>
+              <label><input type="radio" name="meta" value="evento"><span>Un día especial</span></label>
+            </div>
+          </fieldset>
+        </form>
+        <div class="d-r" aria-live="polite">
+          <span class="num">Nuestra recomendación</span>
+          <h3 id="rtitle"></h3>
+          <p id="rtext"></p>
+          <a class="btn" id="rlink" href="https://wa.me/34653196231" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
+            Consultar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visita">
+    <div class="wrap visit-grid">
+      <div class="info reveal">
+        <span class="num">04</span>
+        <h2 style="margin-bottom:36px">Visítanos</h2>
+        <dl>
+          <div><dt>Dirección</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=Marta+Miguel+C.+Juan+Lisbona+Zapata+10+V%C3%A9lez-M%C3%A1laga" target="_blank" rel="noopener">C. Juan Lisbona Zapata, 10<br>29700 Vélez-Málaga</a></dd></div>
+          <div><dt>Teléfono</dt><dd><a href="tel:+34653196231">653 19 62 31</a></dd></div>
+        </dl>
+      </div>
+      <div class="reveal">
+        <table class="hours" id="hours">
+          <caption>Horario</caption>
+          <tbody>
+            <tr data-d="1"><td>Lunes</td><td class="closed">Cerrado</td></tr>
+            <tr data-d="2"><td>Martes</td><td>9:00 – 17:30</td></tr>
+            <tr data-d="3"><td>Miércoles</td><td>9:00 – 17:30</td></tr>
+            <tr data-d="4"><td>Jueves</td><td>9:00 – 17:30</td></tr>
+            <tr data-d="5"><td>Viernes</td><td>9:00 – 17:30</td></tr>
+            <tr data-d="6"><td>Sábado</td><td>9:00 – 13:30</td></tr>
+            <tr data-d="0"><td>Domingo</td><td class="closed">Cerrado</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap f-row">
+    <span>Marta Miguel · Peluquería en Vélez-Málaga</span>
+    <span>Propuesta de diseño, no publicada.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var R={
+    danado:{color:["Tratamiento + color","Primero recuperamos la fibra y después aplicamos el color, para que dure y brille sin castigar más el pelo."],
+            corte:["Corte saneador + tratamiento","Quitamos lo que está estropeado y sellamos el resto con un tratamiento de reparación."],
+            evento:["Tratamiento previo + peinado","Unas semanas antes recuperamos el pelo, y el día del evento queda perfecto y con brillo."]},
+    apagado:{color:["Babylights o matiz","Unas luces finas o un matiz devuelven luz al pelo con un acabado natural."],
+             corte:["Corte + ritual de brillo","Un corte que dé movimiento y un tratamiento de brillo para despertar el pelo."],
+             evento:["Peinado con acabado brillo","Preparamos el pelo con hidratación para que el recogido luzca en fotos."]},
+    bien:{color:["Balayage a medida","Un cambio de color estudiado según tu tono de piel y tu estilo, con aspecto natural."],
+          corte:["Cambio de look asesorado","Vemos juntas qué corte te favorece antes de cortar ni un centímetro."],
+          evento:["Prueba de peinado","Probamos el recogido antes del gran día para que no haya sorpresas."]}
+  };
+  var f=document.getElementById('dform');
+  function upd(){
+    var e=f.estado.value,m=f.meta.value,r=R[e][m];
+    document.getElementById('rtitle').textContent=r[0];
+    document.getElementById('rtext').textContent=r[1];
+    document.getElementById('rlink').href="https://wa.me/34653196231?text="+encodeURIComponent("Hola, he visto vuestra web. Me interesa: "+r[0]+". ¿Qué disponibilidad tenéis?");
+  }
+  f.addEventListener('change',upd);upd();
+
+  var d=new Date().getDay(),row=document.querySelector('#hours tr[data-d="'+d+'"]');
+  if(row)row.classList.add('today');
+
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(x){x.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(x){io.observe(x)});
+})();
+</script>
+</body>
+</html>
