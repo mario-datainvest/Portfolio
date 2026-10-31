@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cómo saber si han hackeado tu correo (Gmail y Outlook) | Antitimo</title>
+<meta name="description" content="Señales de que alguien ha entrado en tu correo y cómo comprobarlo en Gmail y Outlook: sesiones abiertas, reenvíos ocultos y filtraciones. Y qué hacer.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<!-- AdSense: cuando Google apruebe la web, pega aquí el código <script> que te den -->
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Cómo saber si han hackeado tu correo y qué hacer","inLanguage":"es","datePublished":"2026-10-31","dateModified":"2026-10-31","author":{"@type":"Person","name":"Antitimo"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Si mi correo sale en Have I Been Pwned, ¿me han hackeado?","acceptedAnswer":{"@type":"Answer","text":"No necesariamente. Significa que tu dirección apareció en la filtración de alguna web en la que te registraste. El riesgo real es que usaras allí la misma contraseña que en tu correo. Si es así, cámbiala cuanto antes y no la repitas en ningún otro sitio."}},
+{"@type":"Question","name":"Me llega un aviso de inicio de sesión, ¿es real o es phishing?","acceptedAnswer":{"@type":"Answer","text":"Puede ser cualquiera de las dos cosas. No pulses el enlace del mensaje. Abre tú la web de tu cuenta escribiendo la dirección o desde la app y revisa allí la actividad. Si el aviso era auténtico, lo verás reflejado."}},
+{"@type":"Question","name":"Mis contactos reciben correos raros desde mi dirección, pero en mi bandeja de enviados no hay nada. ¿Qué pasa?","acceptedAnswer":{"@type":"Answer","text":"A veces los estafadores falsifican el remitente sin entrar en tu cuenta. Otras veces sí han entrado y borran los enviados para no dejar rastro. Revisa la actividad de seguridad y las sesiones abiertas: si todo es tuyo, probablemente sea una falsificación del remitente; aun así, cambia la contraseña por precaución."}},
+{"@type":"Question","name":"¿Cuánto tarda Microsoft en responder al formulario de recuperación?","acceptedAnswer":{"@type":"Answer","text":"Microsoft indica que envía el resultado en un plazo de 24 horas al correo de contacto que le hayas dado. Por eso ese correo tiene que ser uno al que tengas acceso, aunque sea de un familiar o uno nuevo creado para la ocasión."}}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="../index.html" aria-label="Antitimo, inicio">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 2 29 26H3z" fill="#F5B700" stroke="#111113" stroke-width="2.4" stroke-linejoin="round"/><path d="M16 11v7.5M16 22.5v.5" stroke="#111113" stroke-width="3" stroke-linecap="round"/></svg>
+      Antitimo
+    </a>
+    <nav class="site-nav" aria-label="Principal">
+      <ul>
+        <li><a href="../index.html#guias">Guías</a></li>
+        <li><a href="../index.html#me-han-estafado">Me han estafado</a></li>
+        <li><a href="../sobre-mi.html">Sobre mí</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido" class="read">
+  <p class="crumbs"><a href="../index.html">Inicio</a> › <a href="../index.html#guias">Guías</a> › Cuentas</p>
+
+  <header class="art-head">
+    <span class="kicker">Cuentas</span>
+    <h1>Cómo saber si han hackeado tu correo y qué hacer</h1>
+    <p class="deck">Quien entra en tu correo no siempre lo rompe todo: a veces se queda mirando en silencio. Así puedes comprobarlo en Gmail y en Outlook en diez minutos.</p>
+    <div class="meta"><span>Actualizado: 31 de octubre de 2026</span><span>7 min de lectura</span></div>
+  </header>
+
+  <article class="prose">
+    <div class="box summary">
+      <strong>Resumen rápido</strong>
+      <ul>
+        <li>Revisa la actividad de seguridad y los dispositivos conectados de tu cuenta de Google o de Microsoft.</li>
+        <li>Busca reenvíos automáticos y filtros que no hayas creado: es el truco favorito para espiar sin dejar huella.</li>
+        <li>Si algo no cuadra, cambia la contraseña, cierra las sesiones extrañas y activa la verificación en dos pasos.</li>
+      </ul>
+    </div>
+
+    <h2>Cómo funciona</h2>
+    <p>Tu correo es la llave maestra de casi todo. Con él se recuperan las contraseñas del banco, de Amazon, de Instagram o de la sede de Hacienda. Por eso es el objetivo número uno de los ladrones de cuentas.</p>
+    <p>Las vías de entrada son casi siempre las mismas. La primera es el phishing: un mensaje que imita a tu proveedor de correo y te lleva a una página falsa donde escribes la contraseña. La segunda es la reutilización: usaste la misma clave en una web que sufrió una filtración, y alguien la prueba en tu correo. La tercera es un programa malicioso en el ordenador o el móvil que captura lo que tecleas.</p>
+    <p>Lo peligroso es que el intruso no siempre se nota. Algunos cambian la contraseña y te dejan fuera, pero otros prefieren pasar desapercibidos. Configuran un reenvío para recibir copia de todo lo que te llega, crean un filtro que borra los avisos de seguridad o esperan a que te llegue un código del banco. Puedes pasar semanas sin darte cuenta.</p>
+    <p>Por suerte, Gmail y Outlook guardan un registro de cada acceso y de cada cambio. Solo hay que saber dónde mirar.</p>
+
+    <!-- Ejemplo inventado (nunca copiado de un caso real con datos de personas) -->
+    <div class="example">Asunto: Aviso: su buzón está lleno (98 %)
+Estimado usuario, su cuenta de correo ha superado el límite de almacenamiento. Los mensajes nuevos serán rechazados en las próximas 12 horas.
+Para ampliar el espacio gratis, valide su cuenta aquí:
+hxxps://ampliar-buzon-correo[.]net/validar
+Servicio de Correo Web</div>
+
+    <h2>Señales de alerta</h2>
+    <ul class="checks">
+      <li>Recibes avisos de inicio de sesión o de cambio de contraseña que no has provocado tú.</li>
+      <li>Tus contactos te dicen que les han llegado correos tuyos con enlaces o peticiones de dinero.</li>
+      <li>Hay mensajes marcados como leídos que no has abierto, o desaparecen correos de la bandeja.</li>
+      <li>Otras cuentas te avisan de restablecimientos de contraseña que no has pedido.</li>
+      <li>Ves un aviso de que tu correo se está reenviando a una dirección que no conoces.</li>
+      <li>Tu contraseña de siempre deja de funcionar de repente.</li>
+    </ul>
+
+    <h2>Qué hacer</h2>
+    <ol class="steps">
+      <li><strong>Mira quién ha entrado (Gmail).</strong> Entra en myaccount.google.com, abre la sección de seguridad y revisa la actividad de seguridad reciente. Si ves algo que no fuiste tú, márcalo y sigue los pasos. Desde el ordenador también puedes bajar al final de la bandeja de Gmail y pulsar "Detalles" para ver los últimos accesos con su ubicación e IP aproximada.</li>
+      <li><strong>Mira quién ha entrado (Outlook y Hotmail).</strong> Ve a account.live.com/activity, inicia sesión y despliega cada acceso para ver lugar y dispositivo. Si encuentras algo sospechoso, usa la opción para proteger tu cuenta. Microsoft indica que sus avisos reales llegan desde account-security-noreply@accountprotection.microsoft.com.</li>
+      <li><strong>Revisa los dispositivos conectados.</strong> En tu cuenta de Google, el apartado de tus dispositivos muestra móviles y ordenadores con sesión abierta; puedes cerrar la de cualquiera que no reconozcas. En la cuenta de Microsoft, desde la página de seguridad, puedes cambiar la contraseña y eliminar los dispositivos de confianza.</li>
+      <li><strong>Busca reenvíos y filtros ocultos.</strong> En Gmail, desde el ordenador: rueda dentada, "Ver todos los ajustes", pestaña "Reenvío y correo POP/IMAP". Desactiva cualquier reenvío que no sea tuyo y revisa también la pestaña de filtros. En Outlook: Configuración, Correo, Reenvío, y luego las reglas. Borra todo lo que no hayas creado tú.</li>
+      <li><strong>Cambia la contraseña y comprueba tus datos de recuperación.</strong> Pon una contraseña nueva, larga y que no uses en otro sitio. Comprueba que el teléfono y el correo de recuperación son los tuyos: un intruso listo los cambia para volver más tarde.</li>
+      <li><strong>Comprueba si tu correo aparece en filtraciones.</strong> Escribe tu dirección en haveibeenpwned.com. Te dirá en qué webs filtradas aparece. Si en alguna usabas la misma contraseña que en el correo, cámbiala también allí.</li>
+      <li><strong>Activa la verificación en dos pasos.</strong> Es lo que impide que, aunque alguien tenga tu contraseña, pueda entrar. Tanto Google como Microsoft la ofrecen gratis desde el apartado de seguridad de la cuenta.</li>
+    </ol>
+
+    <div class="box danger">
+      <span class="box-title">Si ya has caído</span>
+      <p>Si ya no puedes entrar, usa la recuperación oficial: en Google, la página accounts.google.com/signin/recovery; en Microsoft, el formulario de recuperación de cuentas, a ser posible desde un dispositivo y un lugar donde hayas usado el correo antes. Mientras tanto, cambia la contraseña de los servicios que dependen de ese correo, empezando por el banco. Si ves cargos o compras que no son tuyos, llama a tu banco y guarda capturas de todo para la denuncia.</p>
+    </div>
+
+    <div class="box ok">
+      <span class="box-title">Dónde pedir ayuda</span>
+      <p>Línea de Ayuda en Ciberseguridad de INCIBE: <strong>017</strong> (gratuita y confidencial). Para denunciar: Policía Nacional (091) o Guardia Civil (062).</p>
+    </div>
+
+    <p>Un último consejo. Cuando termines, repasa el ordenador y el móvil con un antivirus de confianza. Si la contraseña se la llevó un programa malicioso, cambiarla no sirve de mucho mientras el programa siga ahí.</p>
+
+    <div class="video-cta">
+      <span class="play" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20"><path d="M6 4l10 6-10 6z" fill="#fff"/></svg></span>
+      <p><strong>¿Lo prefieres en vídeo?</strong> Lo explico en menos de un minuto en <a href="https://www.youtube.com/@noxtalesstories" rel="noopener">mi canal de YouTube</a>.</p>
+    </div>
+
+    <section class="faq">
+      <h2>Preguntas frecuentes</h2>
+      <details><summary>Si mi correo sale en Have I Been Pwned, ¿me han hackeado?</summary><p>No necesariamente. Significa que tu dirección apareció en la filtración de alguna web en la que te registraste. El riesgo real es que usaras allí la misma contraseña que en tu correo. Si es así, cámbiala cuanto antes y no la repitas en ningún otro sitio.</p></details>
+      <details><summary>Me llega un aviso de inicio de sesión, ¿es real o es phishing?</summary><p>Puede ser cualquiera de las dos cosas. No pulses el enlace del mensaje. Abre tú la web de tu cuenta escribiendo la dirección o desde la app y revisa allí la actividad. Si el aviso era auténtico, lo verás reflejado.</p></details>
+      <details><summary>Mis contactos reciben correos raros desde mi dirección, pero en mi bandeja de enviados no hay nada. ¿Qué pasa?</summary><p>A veces los estafadores falsifican el remitente sin entrar en tu cuenta. Otras veces sí han entrado y borran los enviados para no dejar rastro. Revisa la actividad de seguridad y las sesiones abiertas: si todo es tuyo, probablemente sea una falsificación del remitente; aun así, cambia la contraseña por precaución.</p></details>
+      <details><summary>¿Cuánto tarda Microsoft en responder al formulario de recuperación?</summary><p>Microsoft indica que envía el resultado en un plazo de 24 horas al correo de contacto que le hayas dado. Por eso ese correo tiene que ser uno al que tengas acceso, aunque sea de un familiar o uno nuevo creado para la ocasión.</p></details>
+    </section>
+
+    <section class="sources">
+      <h2>Fuentes</h2>
+      <ul>
+        <li><a href="https://support.google.com/accounts/answer/6294825?hl=es">Ayuda de Google: proteger una cuenta de Google hackeada</a></li>
+        <li><a href="https://support.google.com/mail/answer/45938?hl=es">Ayuda de Gmail: ver la actividad reciente de la cuenta</a></li>
+        <li><a href="https://support.google.com/mail/answer/10957?hl=es">Ayuda de Gmail: reenvío automático de correos</a></li>
+        <li><a href="https://support.microsoft.com/en-us/help/13782">Microsoft: qué es la página de actividad reciente</a></li>
+        <li><a href="https://support.microsoft.com/help/17875">Microsoft: ayuda con el formulario de recuperación de cuentas</a></li>
+        <li><a href="https://www.incibe.es/ciudadania/blog/me-robaron-la-cuenta-que-hago">INCIBE: Me robaron la cuenta, ¿qué hago?</a></li>
+      </ul>
+    </section>
+
+    <section class="related">
+      <h2>Sigue leyendo</h2>
+      <div class="grid">
+        <a class="card" href="contrasenas-seguras-gestor.html"><span class="tag">Cuentas</span><h3>Contraseñas seguras y gestor de contraseñas</h3><span class="more">Leer guía →</span></a>
+        <a class="card" href="saber-si-mi-pc-tiene-virus.html"><span class="tag">PC y móvil</span><h3>Cómo saber si tu PC tiene virus</h3><span class="more">Leer guía →</span></a>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div><strong style="color:var(--ink)">Antitimo</strong><br>Guías claras para reconocer estafas y proteger tus cuentas.</div>
+    <ul>
+      <li><a href="../sobre-mi.html">Sobre mí</a></li>
+      <li><a href="../contacto.html">Contacto</a></li>
+      <li><a href="../aviso-legal.html">Aviso legal</a></li>
+      <li><a href="../privacidad.html">Privacidad</a></li>
+      <li><a href="../cookies.html">Cookies</a></li>
+    </ul>
+    <p class="legal-note">Información divulgativa. No sustituye el asesoramiento de tu banco, de la policía ni de un profesional.</p>
+  </div>
+</footer>
+</body>
+</html>
